@@ -18,6 +18,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @if(auth()->user())
+        @livewireStyles
+    @endif
 </head>
 <body>
     <div id="app">
@@ -76,5 +80,9 @@
             @yield('content')
         </main>
     </div>
+
+    @if(auth()->user())
+        @livewireScripts
+    @endif
 </body>
 </html>
