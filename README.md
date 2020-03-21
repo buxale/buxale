@@ -9,7 +9,7 @@ Verkaufe Gutscheine mit der Sicherheit, dass im Notfal buxale das Geld deinem Ku
 ## Getting started
 
 ### Clone the repository
-`git clone https://github.com/.....`
+`git clone https://github.com/buxale/buxale.git`
 
 ### Install php dependencies
 `composer install`
