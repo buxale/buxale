@@ -60,6 +60,8 @@ class VouchersCreatePage extends Component
         $data['beneficiary_phone'] = auth()->user()->phone;
 
         (new VoucherRepository())->create(auth()->user(), $data);
+
+        return $this->redirect('/vouchers');
     }
 
     public function generateVoucherCode()
