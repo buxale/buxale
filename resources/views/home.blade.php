@@ -54,21 +54,17 @@
                 <pre class="bg-gray-800 rounded text-white mt-4">
                         {{ '
     <head>
-      <title>Checkout</title>
-      <script src="https://js.buxale.com/v1/"></script>
+      ....
+      <script src="https://js.buxale.io/js/app.js"></script>
+      <link href="https://js.buxale.io/css/app.css" rel="stylesheet" />
     </head>' }}
                 </pre>
                 <p class="mt-6">
-                    {{ __('Irgendwo deiner Webseite, wo der Checkout verfügbar sein soll.') }}
+                    {{ __('Irgendwo deiner Webseite, wo der Checkout verfügbar sein soll. Betrag sind in diesem Beispiel 10 Euro') }}
                 </p>
                 <pre class="bg-gray-800 rounded text-white mt-4">
                         {{ "
-    <script>
-        var foo = 'bar';
-        document.ready(function () {
-            console.log('Hello world!')
-        });
-    </script>" }}
+    <buxale-button color=\"teal\" amount=\"10\" />" }}
                 </pre>
             </div>
             <form class="mt-3 text-sm leading-5">
