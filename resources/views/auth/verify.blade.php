@@ -13,7 +13,7 @@
                     {{ __('Bevor du fortfahren kannst, bestätige bitte deine Mail.') }}
                 </p>
             </div>
-            <form class="mt-3 text-sm leading-5">
+            <form class="mt-3 text-sm leading-5" method="POST" action="{{ route('verification.resend') }}">
                 @csrf
                 <button type="submit"
                         class="font-medium text-green-600 hover:text-green-500 focus:outline-none focus:underline transition ease-in-out duration-150">
