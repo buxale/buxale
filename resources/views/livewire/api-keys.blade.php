@@ -1,6 +1,5 @@
 <div>
     <div class="card">
-        <div class="card-header">API Keys</div>
         <div class="card-body">
             @if(! count($apiKeys))
                 {{__('Noch kein API Token vorhanden')}}
