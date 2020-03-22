@@ -3,8 +3,10 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <div class="flex-shrink-0 flex items-center">
-                    <img class="block lg:hidden h-8 w-auto" src="/img/buxale-logo.png" alt=""/>
-                    <img class="hidden lg:block h-8 w-auto" src="/img/buxale-logo.png" alt=""/>
+                    <a href="/">
+                        <img class="block lg:hidden h-8 w-auto" src="/img/buxale-logo.png" alt=""/>
+                        <img class="hidden lg:block h-8 w-auto" src="/img/buxale-logo.png" alt=""/>
+                    </a>
                 </div>
                 <div class="hidden sm:ml-6 sm:flex">
                     {{--                    <a href="#" class="inline-flex items-center px-1 pt-1 border-b-2 border-green-500 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-green-700 transition duration-150 ease-in-out">--}}
