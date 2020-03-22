@@ -68,6 +68,7 @@
             </li>
         @endforeach
     </ul>
-
-    {{ $vouchers->links() }}
+    <div class="my-6">
+        {{ $vouchers->links() }}
+    </div>
 </div>

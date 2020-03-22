@@ -22,6 +22,6 @@ class VouchersIndexPage extends Component
 
     private function getVouchers()
     {
-        return Voucher::where('user_id', auth()->id())->paginate();
+        return Voucher::where('user_id', auth()->id())->paginate(15);
     }
 }
