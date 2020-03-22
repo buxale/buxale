@@ -3,7 +3,6 @@
 namespace App\Http\Livewire;
 
 use App\Repositories\VoucherRepository;
-use App\Voucher;
 use Livewire\Component;
 
 class VouchersCreatePage extends Component
@@ -17,19 +16,9 @@ class VouchersCreatePage extends Component
     public $customer_street_no;
     public $customer_zip;
     public $customer_city;
-    public $customer_country;
+    public $customer_country = 'Deutschland';
     public $customer_email;
     public $customer_phone;
-
-    /**
-     * @var VoucherRepository
-     */
-    private $voucherRepository;
-
-    public function mount()
-    {
-        $this->voucherRepository = new VoucherRepository();
-    }
 
 
     public function updating()
@@ -37,15 +26,18 @@ class VouchersCreatePage extends Component
         $this->validate([
             'value' => 'numeric'
         ]);
+    }
 
-        $this->pott_amount = $this->value * $this->getBuxaleFee();
+    public function updatedValue($val)
+    {
+        $this->pott_amount = $val * $this->getBuxaleFee();
     }
 
     public function submit()
     {
         $data = $this->validate([
             'code' => 'required',
-            'value' => 'required',
+            'value' => 'required|min:1',
             'customer_name' => 'required',
             'customer_street' => 'required',
             'customer_street_no' => 'required',
@@ -66,7 +58,7 @@ class VouchersCreatePage extends Component
         $data['beneficiary_email'] = auth()->user()->email;
         $data['beneficiary_phone'] = auth()->user()->phone;
 
-        $this->voucherRepository->create($data);
+        (new VoucherRepository())->create(auth()->user(), $data);
     }
 
     public function render()
