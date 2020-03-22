@@ -2,6 +2,44 @@
 
 @section('content')
 
+    <div class="flex flex-wrap mb-6">
+        <div class="w-1/3 pr-3">
+            <div class="bg-white shadow sm:rounded-lg">
+                <div class="border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r">
+                    <p class="text-5xl leading-none font-extrabold text-brand">
+                        18
+                    </p>
+                    <p class="mt-2 text-lg leading-6 font-medium text-gray-500">
+                        neue Gutscheine diese Woche
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="w-1/3 px-3">
+            <div class="bg-white shadow sm:rounded-lg">
+                <div class="border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r">
+                    <p class="text-5xl leading-none font-extrabold text-brand">
+                        120€
+                    </p>
+                    <p class="mt-2 text-lg leading-6 font-medium text-gray-500">
+                        Beitrag zum Pott
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="w-1/3 pl-3">
+            <div class="bg-white shadow sm:rounded-lg">
+                <div class="border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r">
+                    <p class="text-5xl leading-none font-extrabold text-brand">
+                        95%
+                    </p>
+                    <p class="mt-2 text-lg leading-6 font-medium text-gray-500">
+                        aktuelle Absicherung
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="bg-white shadow sm:rounded-lg">
         <div class="px-4 py-5 sm:p-6">
