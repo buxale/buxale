@@ -1,22 +1,23 @@
 @extends('layouts.auth')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    <h4 style="font-weight: 200" class="mb-0">{{ __('Register') }}</h4>
-                </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 style="font-weight: 200" class="mb-0">{{ __('Registrieren') }}</h4>
+                    </div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('register') }}">
+                            @csrf
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Voller Name') }}</label>
+                            <div class="form-group row">
+                                <label for="name"
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Voller Name') }}</label>
 
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
