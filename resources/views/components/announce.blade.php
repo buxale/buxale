@@ -6,7 +6,7 @@
           Wir sind in der <span class="font-black">BETA</span>, mit Testdaten.
         </span>
                 <span class="hidden md:inline">
-          Wir sind noch in der <span class="font-black">BETA</span> Aktuell sind alle Daten lediglich Testdaten und zur reinen <span
+          Wir sind noch in der <span class="font-black">BETA!</span> Aktuell sind alle Daten lediglich Testdaten und zur reinen <span
                             class="font-black">DEMO</span> gedacht.
         </span>
                 <span class="block sm:ml-2 sm:inline-block">
