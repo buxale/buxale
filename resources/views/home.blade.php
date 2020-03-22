@@ -75,6 +75,12 @@
             <h3 class="text-lg leading-6 font-medium text-gray-900">
                 Wo soll dein Geld hin gehen?
             </h3>
+            <a
+                    target="_blank"
+                    class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
+                    href="https://connect.stripe.com/express/oauth/authorize?client_id=ca_GxMF96tAgLnVfLXlUACHIrE3AHHaNWgP&stripe_user[email]={{auth()->user()->email}}">
+                Identität bestätigen und Bankkonto verbinden
+            </a>
             <div class="mt-5">
                 <div class="rounded-md bg-gray-50 px-6 py-5 sm:flex sm:items-start sm:justify-between">
                     <div class="sm:flex sm:items-start">

@@ -1,30 +1,30 @@
 {
-  "_readme": [
-    "This file locks the dependencies of your project to a known state",
-    "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-    "This file is @generated automatically"
-  ],
-  "content-hash": "3d418d33aa488d6a828fdfff0bbdf78e",
-  "packages": [
-    {
-      "name": "akaunting/money",
-      "version": "1.1.1",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/akaunting/money.git",
-        "reference": "1bab074aa71ed994eff140b26fb6ce9aecf82430"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/akaunting/money/zipball/1bab074aa71ed994eff140b26fb6ce9aecf82430",
-        "reference": "1bab074aa71ed994eff140b26fb6ce9aecf82430",
-        "shasum": ""
-      },
-      "require": {
-        "illuminate/support": ">=5.4",
-        "illuminate/view": ">=5.4",
-        "php": ">=5.6.4"
-      },
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "4d446089f9530a9e56e13249ecac76d6",
+    "packages": [
+        {
+            "name": "akaunting/money",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/akaunting/money.git",
+                "reference": "1bab074aa71ed994eff140b26fb6ce9aecf82430"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/akaunting/money/zipball/1bab074aa71ed994eff140b26fb6ce9aecf82430",
+                "reference": "1bab074aa71ed994eff140b26fb6ce9aecf82430",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=5.4",
+                "illuminate/view": ">=5.4",
+                "php": ">=5.6.4"
+            },
             "require-dev": {
                 "mockery/mockery": ">=1.0",
                 "phpunit/phpunit": ">=5.7"
@@ -101,180 +101,180 @@
                     "Asm89\\Stack\\": "src/Asm89/Stack/"
                 }
             },
-          "notification-url": "https://packagist.org/downloads/",
-          "license": [
-            "MIT"
-          ],
-          "authors": [
-            {
-              "name": "Alexander",
-              "email": "iam.asm89@gmail.com"
-            }
-          ],
-          "description": "Cross-origin resource sharing library and stack middleware",
-          "homepage": "https://github.com/asm89/stack-cors",
-          "keywords": [
-            "cors",
-            "stack"
-          ],
-          "time": "2019-12-24T22:41:47+00:00"
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander",
+                    "email": "iam.asm89@gmail.com"
+                }
+            ],
+            "description": "Cross-origin resource sharing library and stack middleware",
+            "homepage": "https://github.com/asm89/stack-cors",
+            "keywords": [
+                "cors",
+                "stack"
+            ],
+            "time": "2019-12-24T22:41:47+00:00"
         },
-    {
-      "name": "bacon/bacon-qr-code",
-      "version": "1.0.3",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/Bacon/BaconQrCode.git",
-        "reference": "5a91b62b9d37cee635bbf8d553f4546057250bee"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/5a91b62b9d37cee635bbf8d553f4546057250bee",
-        "reference": "5a91b62b9d37cee635bbf8d553f4546057250bee",
-        "shasum": ""
-      },
-      "require": {
-        "ext-iconv": "*",
-        "php": "^5.4|^7.0"
-      },
-      "require-dev": {
-        "phpunit/phpunit": "^4.8"
-      },
-      "suggest": {
-        "ext-gd": "to generate QR code images"
-      },
-      "type": "library",
-      "autoload": {
-        "psr-0": {
-          "BaconQrCode": "src/"
-        }
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "BSD-2-Clause"
-      ],
-      "authors": [
         {
-          "name": "Ben Scholzen 'DASPRiD'",
-          "email": "mail@dasprids.de",
-          "homepage": "http://www.dasprids.de",
-          "role": "Developer"
-        }
-      ],
-      "description": "BaconQrCode is a QR code generator for PHP.",
-      "homepage": "https://github.com/Bacon/BaconQrCode",
-      "time": "2017-10-17T09:59:25+00:00"
-    },
-    {
-      "name": "balping/json-raw-encoder",
-      "version": "v1.0.0",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/balping/json-raw-encoder.git",
-        "reference": "c404b7fc0e04ddf5d298e53105c5fc306f523195"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/balping/json-raw-encoder/zipball/c404b7fc0e04ddf5d298e53105c5fc306f523195",
-        "reference": "c404b7fc0e04ddf5d298e53105c5fc306f523195",
-        "shasum": ""
-      },
-      "require": {
-        "php": ">=7.0"
-      },
-      "require-dev": {
-        "phpunit/phpunit": "^7.1"
-      },
-      "type": "library",
-      "autoload": {
-        "psr-4": {
-          "Balping\\JsonRaw\\": "src/"
-        }
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "GPL-3.0-only"
-      ],
-      "authors": [
+            "name": "bacon/bacon-qr-code",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Bacon/BaconQrCode.git",
+                "reference": "5a91b62b9d37cee635bbf8d553f4546057250bee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/5a91b62b9d37cee635bbf8d553f4546057250bee",
+                "reference": "5a91b62b9d37cee635bbf8d553f4546057250bee",
+                "shasum": ""
+            },
+            "require": {
+                "ext-iconv": "*",
+                "php": "^5.4|^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "suggest": {
+                "ext-gd": "to generate QR code images"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "BaconQrCode": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Scholzen 'DASPRiD'",
+                    "email": "mail@dasprids.de",
+                    "homepage": "http://www.dasprids.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "BaconQrCode is a QR code generator for PHP.",
+            "homepage": "https://github.com/Bacon/BaconQrCode",
+            "time": "2017-10-17T09:59:25+00:00"
+        },
         {
-          "name": "Balázs Dura-Kovács"
-        }
-      ],
-      "description": "Encode arrays to json with raw JS objects (eg. callbacks) in them",
-      "keywords": [
-        "callback",
-        "encode",
-        "json"
-      ],
-      "time": "2018-05-04T15:38:02+00:00"
-    },
-    {
-      "name": "consoletvs/charts",
-      "version": "6.5.4",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/ConsoleTVs/Charts.git",
-        "reference": "524257b5d525666385bd2e91b06e376994a7b683"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/ConsoleTVs/Charts/zipball/524257b5d525666385bd2e91b06e376994a7b683",
-        "reference": "524257b5d525666385bd2e91b06e376994a7b683",
-        "shasum": ""
-      },
-      "require": {
-        "balping/json-raw-encoder": "^1.0",
-        "illuminate/console": "^5.0|^6.0|^7.0",
-        "illuminate/support": "^5.0|^6.0|^7.0",
-        "php": ">=7.0"
-      },
-      "type": "library",
-      "extra": {
-        "laravel": {
-          "providers": [
-            "ConsoleTVs\\Charts\\ChartsServiceProvider"
-          ]
-        }
-      },
-      "autoload": {
-        "psr-4": {
-          "ConsoleTVs\\Charts\\": "src/"
-        }
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "MIT"
-      ],
-      "authors": [
+            "name": "balping/json-raw-encoder",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/balping/json-raw-encoder.git",
+                "reference": "c404b7fc0e04ddf5d298e53105c5fc306f523195"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/balping/json-raw-encoder/zipball/c404b7fc0e04ddf5d298e53105c5fc306f523195",
+                "reference": "c404b7fc0e04ddf5d298e53105c5fc306f523195",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Balping\\JsonRaw\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Balázs Dura-Kovács"
+                }
+            ],
+            "description": "Encode arrays to json with raw JS objects (eg. callbacks) in them",
+            "keywords": [
+                "callback",
+                "encode",
+                "json"
+            ],
+            "time": "2018-05-04T15:38:02+00:00"
+        },
         {
-          "name": "Èrik Campobadal Forés",
-          "email": "soc@erik.cat"
-        }
-      ],
-      "description": "The laravel charting package",
-      "time": "2020-03-03T23:16:14+00:00"
-    },
-    {
-      "name": "dnoegel/php-xdg-base-dir",
-      "version": "v0.1.1",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/dnoegel/php-xdg-base-dir.git",
-        "reference": "8f8a6e48c5ecb0f991c2fdcf5f154a47d85f9ffd"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/dnoegel/php-xdg-base-dir/zipball/8f8a6e48c5ecb0f991c2fdcf5f154a47d85f9ffd",
-        "reference": "8f8a6e48c5ecb0f991c2fdcf5f154a47d85f9ffd",
-        "shasum": ""
-      },
-      "require": {
-        "php": ">=5.3.2"
-      },
-      "require-dev": {
-        "phpunit/phpunit": "~7.0|~6.0|~5.0|~4.8.35"
-      },
-      "type": "library",
+            "name": "consoletvs/charts",
+            "version": "6.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ConsoleTVs/Charts.git",
+                "reference": "524257b5d525666385bd2e91b06e376994a7b683"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ConsoleTVs/Charts/zipball/524257b5d525666385bd2e91b06e376994a7b683",
+                "reference": "524257b5d525666385bd2e91b06e376994a7b683",
+                "shasum": ""
+            },
+            "require": {
+                "balping/json-raw-encoder": "^1.0",
+                "illuminate/console": "^5.0|^6.0|^7.0",
+                "illuminate/support": "^5.0|^6.0|^7.0",
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ConsoleTVs\\Charts\\ChartsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ConsoleTVs\\Charts\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Èrik Campobadal Forés",
+                    "email": "soc@erik.cat"
+                }
+            ],
+            "description": "The laravel charting package",
+            "time": "2020-03-03T23:16:14+00:00"
+        },
+        {
+            "name": "dnoegel/php-xdg-base-dir",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dnoegel/php-xdg-base-dir.git",
+                "reference": "8f8a6e48c5ecb0f991c2fdcf5f154a47d85f9ffd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dnoegel/php-xdg-base-dir/zipball/8f8a6e48c5ecb0f991c2fdcf5f154a47d85f9ffd",
+                "reference": "8f8a6e48c5ecb0f991c2fdcf5f154a47d85f9ffd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~7.0|~6.0|~5.0|~4.8.35"
+            },
+            "type": "library",
             "autoload": {
                 "psr-4": {
                     "XdgBaseDir\\": "src/"
@@ -2258,106 +2258,163 @@
                     "email": "ben@benramsey.com",
                     "homepage": "https://benramsey.com"
                 },
-              {
-                "name": "Marijn Huizendveld",
-                "email": "marijn.huizendveld@gmail.com"
-              },
-              {
-                "name": "Thibaud Fabre",
-                "email": "thibaud@aztech.io"
-              }
+                {
+                    "name": "Marijn Huizendveld",
+                    "email": "marijn.huizendveld@gmail.com"
+                },
+                {
+                    "name": "Thibaud Fabre",
+                    "email": "thibaud@aztech.io"
+                }
             ],
-          "description": "Formerly rhumsaa/uuid. A PHP 5.4+ library for generating RFC 4122 version 1, 3, 4, and 5 universally unique identifiers (UUID).",
-          "homepage": "https://github.com/ramsey/uuid",
-          "keywords": [
-            "guid",
-            "identifier",
-            "uuid"
-          ],
-          "time": "2020-02-21T04:36:14+00:00"
+            "description": "Formerly rhumsaa/uuid. A PHP 5.4+ library for generating RFC 4122 version 1, 3, 4, and 5 universally unique identifiers (UUID).",
+            "homepage": "https://github.com/ramsey/uuid",
+            "keywords": [
+                "guid",
+                "identifier",
+                "uuid"
+            ],
+            "time": "2020-02-21T04:36:14+00:00"
         },
-    {
-      "name": "simplesoftwareio/simple-qrcode",
-      "version": "2.0.0",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/SimpleSoftwareIO/simple-qrcode.git",
-        "reference": "90b2282dd29be1e52565e9832dc23af41610ea07"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/SimpleSoftwareIO/simple-qrcode/zipball/90b2282dd29be1e52565e9832dc23af41610ea07",
-        "reference": "90b2282dd29be1e52565e9832dc23af41610ea07",
-        "shasum": ""
-      },
-      "require": {
-        "bacon/bacon-qr-code": "1.0.*",
-        "ext-gd": "*",
-        "illuminate/support": ">=5.0.0",
-        "php": ">=7.0"
-      },
-      "require-dev": {
-        "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~6"
-      },
-      "type": "library",
-      "extra": {
-        "laravel": {
-          "providers": [
-            "SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider"
-          ],
-          "aliases": {
-            "QrCode": "SimpleSoftwareIO\\QrCode\\Facades\\QrCode"
-          }
-        }
-      },
-      "autoload": {
-        "psr-0": {
-          "SimpleSoftwareIO\\QrCode\\": "src"
-        }
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "MIT"
-      ],
-      "authors": [
         {
-          "name": "Simple Software LLC",
-          "email": "support@simplesoftware.io"
-        }
-      ],
-      "description": "Simple QrCode is a QR code generator made for Laravel.",
-      "homepage": "http://www.simplesoftware.io",
-      "keywords": [
-        "Simple",
-        "generator",
-        "laravel",
-        "qrcode",
-        "wrapper"
-      ],
-      "time": "2017-11-26T15:27:12+00:00"
-    },
-    {
-      "name": "swiftmailer/swiftmailer",
-      "version": "v6.2.3",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/swiftmailer/swiftmailer.git",
-        "reference": "149cfdf118b169f7840bbe3ef0d4bc795d1780c9"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/149cfdf118b169f7840bbe3ef0d4bc795d1780c9",
-        "reference": "149cfdf118b169f7840bbe3ef0d4bc795d1780c9",
-        "shasum": ""
-      },
-      "require": {
-        "egulias/email-validator": "~2.0",
-        "php": ">=7.0.0",
-        "symfony/polyfill-iconv": "^1.0",
-        "symfony/polyfill-intl-idn": "^1.10",
-        "symfony/polyfill-mbstring": "^1.0"
-      },
+            "name": "simplesoftwareio/simple-qrcode",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SimpleSoftwareIO/simple-qrcode.git",
+                "reference": "90b2282dd29be1e52565e9832dc23af41610ea07"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SimpleSoftwareIO/simple-qrcode/zipball/90b2282dd29be1e52565e9832dc23af41610ea07",
+                "reference": "90b2282dd29be1e52565e9832dc23af41610ea07",
+                "shasum": ""
+            },
+            "require": {
+                "bacon/bacon-qr-code": "1.0.*",
+                "ext-gd": "*",
+                "illuminate/support": ">=5.0.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "~6"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider"
+                    ],
+                    "aliases": {
+                        "QrCode": "SimpleSoftwareIO\\QrCode\\Facades\\QrCode"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "SimpleSoftwareIO\\QrCode\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Simple Software LLC",
+                    "email": "support@simplesoftware.io"
+                }
+            ],
+            "description": "Simple QrCode is a QR code generator made for Laravel.",
+            "homepage": "http://www.simplesoftware.io",
+            "keywords": [
+                "Simple",
+                "generator",
+                "laravel",
+                "qrcode",
+                "wrapper"
+            ],
+            "time": "2017-11-26T15:27:12+00:00"
+        },
+        {
+            "name": "stripe/stripe-php",
+            "version": "v7.27.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stripe/stripe-php.git",
+                "reference": "a6bbc392248f892123aed515b18a6360447cd658"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/a6bbc392248f892123aed515b18a6360447cd658",
+                "reference": "a6bbc392248f892123aed515b18a6360447cd658",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.15",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^5.7",
+                "squizlabs/php_codesniffer": "^3.3",
+                "symfony/process": "~3.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Stripe\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stripe and contributors",
+                    "homepage": "https://github.com/stripe/stripe-php/contributors"
+                }
+            ],
+            "description": "Stripe PHP Library",
+            "homepage": "https://stripe.com/",
+            "keywords": [
+                "api",
+                "payment processing",
+                "stripe"
+            ],
+            "time": "2020-03-18T20:32:13+00:00"
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "version": "v6.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swiftmailer/swiftmailer.git",
+                "reference": "149cfdf118b169f7840bbe3ef0d4bc795d1780c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/149cfdf118b169f7840bbe3ef0d4bc795d1780c9",
+                "reference": "149cfdf118b169f7840bbe3ef0d4bc795d1780c9",
+                "shasum": ""
+            },
+            "require": {
+                "egulias/email-validator": "~2.0",
+                "php": ">=7.0.0",
+                "symfony/polyfill-iconv": "^1.0",
+                "symfony/polyfill-intl-idn": "^1.10",
+                "symfony/polyfill-mbstring": "^1.0"
+            },
             "require-dev": {
                 "mockery/mockery": "~0.9.1",
                 "symfony/phpunit-bridge": "^3.4.19|^4.1.8"

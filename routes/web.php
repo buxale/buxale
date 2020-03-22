@@ -26,7 +26,7 @@ Route::middleware(['verified'])->group(function () {
     Route::livewire('/vouchers', 'vouchers-index-page')->layout('layouts.app', ['title' => __('Meine Gutscheine')]);
     Route::livewire('/vouchers/create', 'vouchers-create-page')->layout('layouts.app', ['title' => __('Neuer Gutschein')]);
     Route::livewire('/user/profile', 'user-profile-page')->layout('layouts.app', ['title' => __('User Profil')]);
+    Route::get('stripe_redirect', 'StripeAuthController@handle');
 });
-
 
 Route::get('qr-code', 'QrCodeController@generate');
