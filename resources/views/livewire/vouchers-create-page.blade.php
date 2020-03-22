@@ -11,6 +11,19 @@
             </div>
             <div class="mt-6 sm:mt-5">
                 <x-text-field name="code" title="Gutschein Nummer / Identifikation"/>
+                <button type="button" wire:click="generateVoucherCode"
+                        class="font-medium text-green-600 hover:text-green-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+                    {{ __('Generiere den Code für mich') }} &rarr;
+                </button>
+
+                @if($code)
+                    <div>
+                        <span>Dein QR Code:</span>
+                        {!! QrCode::size(300)->generate($code); !!}
+                        <a href="/qr-code?code={{$code}}" target="_blank">Download</a>
+                    </div>
+                @endif
+
                 <x-text-field class="mt-6" name="value"><span class="font-black">BRUTTO</span> Wert des Gutscheines.
                 </x-text-field>
 

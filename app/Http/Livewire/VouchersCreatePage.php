@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Repositories\VoucherRepository;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 class VouchersCreatePage extends Component
@@ -59,6 +60,11 @@ class VouchersCreatePage extends Component
         $data['beneficiary_phone'] = auth()->user()->phone;
 
         (new VoucherRepository())->create(auth()->user(), $data);
+    }
+
+    public function generateVoucherCode()
+    {
+        $this->code = Str::uuid()->toString();
     }
 
     public function render()

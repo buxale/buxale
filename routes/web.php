@@ -26,3 +26,6 @@ Route::middleware(['verified'])->group(function () {
     Route::livewire('/vouchers', 'vouchers-index-page')->layout('layouts.app', ['title' => __('Meine Gutscheine')]);
     Route::livewire('/vouchers/create', 'vouchers-create-page')->layout('layouts.app', ['title' => __('Neuer Gutschein')]);
 });
+
+
+Route::get('qr-code', 'QrCodeController@generate');
