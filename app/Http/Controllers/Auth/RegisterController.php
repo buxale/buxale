@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -53,6 +54,13 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'company' => ['required'],
+            'street' => ['required'],
+            'street_no' => ['required'],
+            'zip' => ['required'],
+            'city' => ['required'],
+            'country' => ['required'],
+            'phone' => ['nullable'],
         ]);
     }
 
@@ -68,6 +76,13 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'company' => $data['company'],
+            'street' => $data['street'],
+            'street_no' => $data['street_no'],
+            'zip' => $data['zip'],
+            'city' => $data['city'],
+            'country' => $data['country'],
+            'phone' => Arr::get($data, 'phone', NULL),
         ]);
     }
 }
