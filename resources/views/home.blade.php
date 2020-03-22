@@ -46,7 +46,7 @@
             <h3 class="text-lg leading-6 font-medium text-gray-900">
                 {{ __('Deinen Checkout einbetten') }}
             </h3>
-            <div class="mt-2 max-w-xl text-sm leading-5 text-gray-500">
+            <div class="mt-2 text-sm leading-5 text-gray-500">
                 <p>
                     {{ __('Kopiere diesen Code in deinen <head> Bereich deiner Webseite') }}
                     {{ __('Benutzt du ein CMS, nimm gern Kontakt zu uns auf und wir helfen dir weiter.') }}
