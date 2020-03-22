@@ -25,6 +25,7 @@ Route::middleware(['verified'])->group(function () {
     Route::livewire('/mein-checkout', 'my-checkout')->layout('layouts.app', ['title' => 'Mein Checkout']);
     Route::livewire('/vouchers', 'vouchers-index-page')->layout('layouts.app', ['title' => __('Meine Gutscheine')]);
     Route::livewire('/vouchers/create', 'vouchers-create-page')->layout('layouts.app', ['title' => __('Neuer Gutschein')]);
+    Route::livewire('/user/profile', 'user-profile-page')->layout('layouts.app', ['title' => __('User Profil')]);
 });
 
 
