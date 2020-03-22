@@ -1,20 +1,81 @@
 {
-  "_readme": [
-    "This file locks the dependencies of your project to a known state",
-    "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-    "This file is @generated automatically"
-  ],
-  "content-hash": "ed55d02a38026d5ba2874a1940a71f19",
-  "packages": [
-    {
-      "name": "asm89/stack-cors",
-      "version": "1.3.0",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/asm89/stack-cors.git",
-        "reference": "b9c31def6a83f84b4d4a40d35996d375755f0e08"
-      },
-      "dist": {
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "d322019dfff9daad5b028ac5f671a235",
+    "packages": [
+        {
+            "name": "akaunting/money",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/akaunting/money.git",
+                "reference": "1bab074aa71ed994eff140b26fb6ce9aecf82430"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/akaunting/money/zipball/1bab074aa71ed994eff140b26fb6ce9aecf82430",
+                "reference": "1bab074aa71ed994eff140b26fb6ce9aecf82430",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=5.4",
+                "illuminate/view": ">=5.4",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "mockery/mockery": ">=1.0",
+                "phpunit/phpunit": ">=5.7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Akaunting\\Money\\Provider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Akaunting\\Money\\": "./src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Denis Duliçi",
+                    "email": "info@akaunting.com",
+                    "homepage": "https://akaunting.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Currency formatting and conversion package for Laravel.",
+            "keywords": [
+                "convert",
+                "currency",
+                "format",
+                "laravel",
+                "money"
+            ],
+            "time": "2020-03-09T15:01:03+00:00"
+        },
+        {
+            "name": "asm89/stack-cors",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/asm89/stack-cors.git",
+                "reference": "b9c31def6a83f84b4d4a40d35996d375755f0e08"
+            },
+            "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/asm89/stack-cors/zipball/b9c31def6a83f84b4d4a40d35996d375755f0e08",
                 "reference": "b9c31def6a83f84b4d4a40d35996d375755f0e08",
@@ -3451,145 +3512,145 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
-          "description": "Symfony mechanism for exploring and dumping PHP variables",
-          "homepage": "https://symfony.com",
-          "keywords": [
-            "debug",
-            "dump"
-          ],
-          "time": "2020-02-26T22:30:10+00:00"
-        },
-    {
-      "name": "thomaswelton/gravatarlib",
-      "version": "0.1.0",
-      "target-dir": "thomaswelton/GravatarLib",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/thomaswelton/gravatarlib.git",
-        "reference": "8a4e829c53ca2abb51ef2e514f696938a9bdbd0c"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/thomaswelton/gravatarlib/zipball/8a4e829c53ca2abb51ef2e514f696938a9bdbd0c",
-        "reference": "8a4e829c53ca2abb51ef2e514f696938a9bdbd0c",
-        "shasum": ""
-      },
-      "require": {
-        "php": ">=5.3.0"
-      },
-      "suggest": {
-        "twig/twig": ">=1.4.0"
-      },
-      "type": "library",
-      "autoload": {
-        "psr-0": {
-          "thomaswelton\\GravatarLib\\": ""
-        }
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "MIT"
-      ],
-      "authors": [
-        {
-          "name": "Sam Thompson",
-          "email": "sam@emberlabs.org"
+            "description": "Symfony mechanism for exploring and dumping PHP variables",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "debug",
+                "dump"
+            ],
+            "time": "2020-02-26T22:30:10+00:00"
         },
         {
-          "name": "Damian Bushong",
-          "email": "damian@emberlabs.org"
+            "name": "thomaswelton/gravatarlib",
+            "version": "0.1.0",
+            "target-dir": "thomaswelton/GravatarLib",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thomaswelton/gravatarlib.git",
+                "reference": "8a4e829c53ca2abb51ef2e514f696938a9bdbd0c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thomaswelton/gravatarlib/zipball/8a4e829c53ca2abb51ef2e514f696938a9bdbd0c",
+                "reference": "8a4e829c53ca2abb51ef2e514f696938a9bdbd0c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "twig/twig": ">=1.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "thomaswelton\\GravatarLib\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sam Thompson",
+                    "email": "sam@emberlabs.org"
+                },
+                {
+                    "name": "Damian Bushong",
+                    "email": "damian@emberlabs.org"
+                },
+                {
+                    "name": "Thomas Welton",
+                    "email": "thomaswelton@me.com",
+                    "homepage": "https://github.com/thomaswelton",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A lightweight PHP 5.3 OOP library providing easy gravatar integration.",
+            "keywords": [
+                "gravatar",
+                "templating",
+                "twig"
+            ],
+            "time": "2014-03-02T18:29:18+00:00"
         },
         {
-          "name": "Thomas Welton",
-          "email": "thomaswelton@me.com",
-          "homepage": "https://github.com/thomaswelton",
-          "role": "Developer"
-        }
-      ],
-      "description": "A lightweight PHP 5.3 OOP library providing easy gravatar integration.",
-      "keywords": [
-        "gravatar",
-        "templating",
-        "twig"
-      ],
-      "time": "2014-03-02T18:29:18+00:00"
-    },
-    {
-      "name": "thomaswelton/laravel-gravatar",
-      "version": "1.2.0",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/thomaswelton/laravel-gravatar.git",
-        "reference": "4f6f54735a0f18469b6cb5dbacf8a05d878ac28d"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/thomaswelton/laravel-gravatar/zipball/4f6f54735a0f18469b6cb5dbacf8a05d878ac28d",
-        "reference": "4f6f54735a0f18469b6cb5dbacf8a05d878ac28d",
-        "shasum": ""
-      },
-      "require": {
-        "illuminate/support": "~5.0|^6.0|^7.0",
-        "php": ">=5.4.0",
-        "thomaswelton/gravatarlib": "0.1.x"
-      },
-      "require-dev": {
-        "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "4.8.*"
-      },
-      "type": "library",
-      "extra": {
-        "laravel": {
-          "providers": [
-            "Thomaswelton\\LaravelGravatar\\LaravelGravatarServiceProvider"
-          ],
-          "aliases": {
-            "Gravatar": "Thomaswelton\\LaravelGravatar\\Facades\\Gravatar"
-          }
-        }
-      },
-      "autoload": {
-        "psr-4": {
-          "Thomaswelton\\LaravelGravatar\\": "src/",
-          "Thomaswelton\\Tests\\LaravelGravatar\\": "tests/"
-        }
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "MIT"
-      ],
-      "authors": [
-        {
-          "name": "ThomasWelton",
-          "email": "thomaswelton@me.com",
-          "role": "Developer"
+            "name": "thomaswelton/laravel-gravatar",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thomaswelton/laravel-gravatar.git",
+                "reference": "4f6f54735a0f18469b6cb5dbacf8a05d878ac28d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thomaswelton/laravel-gravatar/zipball/4f6f54735a0f18469b6cb5dbacf8a05d878ac28d",
+                "reference": "4f6f54735a0f18469b6cb5dbacf8a05d878ac28d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0|^6.0|^7.0",
+                "php": ">=5.4.0",
+                "thomaswelton/gravatarlib": "0.1.x"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.8.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Thomaswelton\\LaravelGravatar\\LaravelGravatarServiceProvider"
+                    ],
+                    "aliases": {
+                        "Gravatar": "Thomaswelton\\LaravelGravatar\\Facades\\Gravatar"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Thomaswelton\\LaravelGravatar\\": "src/",
+                    "Thomaswelton\\Tests\\LaravelGravatar\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ThomasWelton",
+                    "email": "thomaswelton@me.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Antoine Augusti",
+                    "email": "antoine.augusti@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel 5 Gravatar helper",
+            "homepage": "https://github.com/thomaswelton/laravel-gravatar",
+            "keywords": [
+                "gravatar",
+                "laravel",
+                "laravel5"
+            ],
+            "time": "2019-10-10T08:32:51+00:00"
         },
         {
-          "name": "Antoine Augusti",
-          "email": "antoine.augusti@gmail.com",
-          "role": "Developer"
-        }
-      ],
-      "description": "Laravel 5 Gravatar helper",
-      "homepage": "https://github.com/thomaswelton/laravel-gravatar",
-      "keywords": [
-        "gravatar",
-        "laravel",
-        "laravel5"
-      ],
-      "time": "2019-10-10T08:32:51+00:00"
-    },
-    {
-      "name": "tijsverkoyen/css-to-inline-styles",
-      "version": "2.2.2",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/tijsverkoyen/CssToInlineStyles.git",
-        "reference": "dda2ee426acd6d801d5b7fd1001cde9b5f790e15"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/dda2ee426acd6d801d5b7fd1001cde9b5f790e15",
+            "name": "tijsverkoyen/css-to-inline-styles",
+            "version": "2.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tijsverkoyen/CssToInlineStyles.git",
+                "reference": "dda2ee426acd6d801d5b7fd1001cde9b5f790e15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/dda2ee426acd6d801d5b7fd1001cde9b5f790e15",
                 "reference": "dda2ee426acd6d801d5b7fd1001cde9b5f790e15",
                 "shasum": ""
             },
@@ -5740,5 +5801,5 @@
     "platform": {
         "php": "^7.2.5"
     },
-  "platform-dev": []
+    "platform-dev": []
 }
