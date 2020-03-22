@@ -93,19 +93,24 @@
                          alt=""/>
                 </div>
                 <div class="ml-3">
-                    <div class="text-base font-medium leading-6 text-gray-800">Tom Cook</div>
-                    <div class="text-sm font-medium leading-5 text-gray-500">tom@example.com</div>
+                    <div class="text-base font-medium leading-6 text-gray-800">{{ auth()->user()->name }}</div>
+                    <div class="text-sm font-medium leading-5 text-gray-500">{{ auth()->user()->email }}</div>
                 </div>
             </div>
             <div class="mt-3">
+                <a href="/profile"
+                   class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:text-gray-800 focus:bg-gray-100 transition duration-150 ease-in-out">Dein
+                    Profil</a>
+                {{--                <a href="#"--}}
+                {{--                   class="mt-1 block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:text-gray-800 focus:bg-gray-100 transition duration-150 ease-in-out">Settings</a>--}}
                 <a href="#"
-                   class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:text-gray-800 focus:bg-gray-100 transition duration-150 ease-in-out">Your
-                    Profile</a>
-                <a href="#"
-                   class="mt-1 block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:text-gray-800 focus:bg-gray-100 transition duration-150 ease-in-out">Settings</a>
-                <a href="#"
-                   class="mt-1 block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:text-gray-800 focus:bg-gray-100 transition duration-150 ease-in-out">Sign
-                    out</a>
+                   class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:text-gray-800 focus:bg-gray-100 transition duration-150 ease-in-out"
+                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                >Ausloggen</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                      style="display: none;">
+                    @csrf
+                </form>
             </div>
         </div>
     </div>

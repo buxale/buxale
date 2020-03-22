@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="flex flex-wrap mb-6">
-        <div class="w-1/3 pr-3">
+        <div class="w-full sm:w-1/3 pl-3 pr-3 sm:pl-0">
             <div class="bg-white shadow sm:rounded-lg">
                 <div class="border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r">
                     <p class="text-5xl leading-none font-extrabold text-brand">
@@ -15,7 +15,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-1/3 px-3">
+        <div class="w-full sm:w-1/3 px-3">
             <div class="bg-white shadow sm:rounded-lg">
                 <div class="border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r">
                     <p class="text-5xl leading-none font-extrabold text-brand">
@@ -27,7 +27,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-1/3 pl-3">
+        <div class="w-full sm:w-1/3 pl-3 pr-3 sm:pr-0">
             <div class="bg-white shadow sm:rounded-lg">
                 <div class="border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r">
                     <p class="text-5xl leading-none font-extrabold text-brand">
