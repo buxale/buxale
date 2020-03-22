@@ -24,11 +24,10 @@
                 </pre>
             </div>
             <form class="mt-3 text-sm leading-5">
-                @csrf
-                <button type="submit"
-                        class="font-medium text-green-600 hover:text-green-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+                <a href="/mein-checkout"
+                   class="font-medium text-green-600 hover:text-green-500 focus:outline-none focus:underline transition ease-in-out duration-150">
                     {{ __('Passe deinen Checkout an') }} &rarr;
-                </button>
+                </a>
             </form>
         </div>
     </div>

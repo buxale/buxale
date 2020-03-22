@@ -1,4 +1,21 @@
-<div class="bg-white shadow overflow-hidden sm:rounded-md">
+<div class="flex flex-wrap justify-between">
+    <div class="w-full sm:w-1/3">
+        <label for="email" class="sr-only">Email</label>
+        <div class="relative rounded-md shadow-sm">
+            <input id="search" wire:model="search" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="Suchen..." />
+        </div>
+    </div>
+
+    <div>
+        <span class="inline-flex rounded-md shadow-sm">
+          <a href="/vouchers/create" class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-brand hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green active:bg-green-700 transition ease-in-out duration-150">
+            Neuer Gutschein
+          </a>
+        </span>
+    </div>
+</div>
+
+<div class="bg-white shadow overflow-hidden sm:rounded-md mt-6">
     <ul>
         <li>
             <a href="#"
