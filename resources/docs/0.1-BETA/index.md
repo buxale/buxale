@@ -1,2 +1,5 @@
 - ## Get Started
     - [Overview](/{{route}}/{{version}}/overview)
+- ## BuxButton
+    - [Implementierung](/{{route}}/{{version}}/buxale-button/integration)
+    - [Button API](/{{route}}/{{version}}/buxale-button/button-api)
