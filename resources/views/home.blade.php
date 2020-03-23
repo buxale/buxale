@@ -31,10 +31,10 @@
             <div class="bg-white shadow sm:rounded-lg">
                 <div class="border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r">
                     <p class="text-5xl leading-none font-extrabold text-brand">
-                        95%
+                        840,29€
                     </p>
                     <p class="mt-2 text-lg leading-6 font-medium text-gray-500">
-                        aktuelle Absicherung
+                        werden morgen ausgezahlt
                     </p>
                 </div>
             </div>
