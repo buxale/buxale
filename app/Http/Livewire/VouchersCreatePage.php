@@ -49,17 +49,7 @@ class VouchersCreatePage extends Component
             'customer_phone' => 'required',
         ]);
 
-        $data['beneficiary_company'] = auth()->user()->company;
-        $data['beneficiary_name'] = auth()->user()->name;
-        $data['beneficiary_street'] = auth()->user()->street;
-        $data['beneficiary_street_no'] = auth()->user()->street_no;
-        $data['beneficiary_zip'] = auth()->user()->zip;
-        $data['beneficiary_city'] = auth()->user()->city;
-        $data['beneficiary_country'] = auth()->user()->country;
-        $data['beneficiary_email'] = auth()->user()->email;
-        $data['beneficiary_phone'] = auth()->user()->phone;
-
-        (new VoucherRepository())->create(auth()->user(), $data);
+        (new VoucherRepository())->createFromUser(auth()->user(), $data);
 
         return $this->redirect('/vouchers');
     }

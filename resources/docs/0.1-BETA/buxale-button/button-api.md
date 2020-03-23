@@ -35,6 +35,10 @@ Folgende Parameter sind verfügbar. Erklärung dazu folgt weiter unten.
     api_token: {
       type: String,
       required: true
+    },
+    ref_id: {
+      type: String,
+      required: false
     }
   }
 ```

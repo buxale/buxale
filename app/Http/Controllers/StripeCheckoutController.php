@@ -2,17 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\CheckoutSession;
+use App\Events\CheckoutFulfilled;
+use App\Repositories\VoucherRepository;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 
 class StripeCheckoutController extends Controller
 {
+    /**
+     * @var VoucherRepository
+     */
+    private $voucherRepository;
+
+    public function __construct(VoucherRepository $voucherRepository)
+    {
+        $this->voucherRepository = $voucherRepository;
+    }
+
     public function session()
     {
         request()->validate([
             'amount' => 'required|numeric',
             'success_url' => 'required',
-            'cancel_url' => 'required'
+            'cancel_url' => 'required',
+            'ref_id' => 'nullable',
+            'code' => 'nullable'
         ]);
 
         $amount = intval(request('amount')) * 100;
@@ -32,6 +47,30 @@ class StripeCheckoutController extends Controller
             ],
             'success_url' => request('success_url'),
             'cancel_url' => request('cancel_url'),
+        ]);
+        $code = request()->input('code', Str::uuid());
+
+        // create an empty, unpaid voucher
+        $voucher = $this->voucherRepository->createFromUser(auth()->user(), [
+            'code' => $code,
+            'value' => intval(request('amount'))
+        ]);
+
+        // References. Allow custom references, but if there is a dup, return 400
+        $combined_ref = null;
+        if (request()->has('ref_id')) {
+            $combined_ref = auth()->id() . '_' . request('ref_id');
+            if (CheckoutSession::where('ref_id', $combined_ref)->count()) {
+                return response('ref_id already used!', 400);
+            }
+        }
+
+        //initiate an internal session for later matchup
+        CheckoutSession::create([
+            'user_id' => auth()->id(),
+            'voucher_id' => $voucher->id,
+            'ref_id' => $combined_ref,
+            'session_id' => $session->id
         ]);
         return $session->id;
     }
@@ -59,7 +98,9 @@ class StripeCheckoutController extends Controller
 
         if ($event->type == 'checkout.session.completed') {
             $session = $event->data->object;
-            Log::info($session);
+            $checkout_session = CheckoutSession::whereSessionId($session->id)->first();
+            $checkout_session->update(['status' => 'fulfilled']); // TODO: Refactor to listener, for async computing
+            event(new CheckoutFulfilled($checkout_session));
         }
 
         return response('Ok', 200);

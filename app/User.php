@@ -45,4 +45,12 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Voucher::Class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function customer_webhooks()
+    {
+        return $this->hasMany(CustomerWebhook::class);
+    }
 }
