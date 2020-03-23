@@ -60,11 +60,17 @@
     </head>' }}
                 </pre>
                 <p class="mt-6">
-                    {{ __('Irgendwo deiner Webseite, wo der Checkout verfügbar sein soll. Betrag sind in diesem Beispiel 10 Euro') }}
+                    {{ __('Irgendwo deiner Webseite, wo der Checkout verfügbar sein soll. Betrag sind in diesem Beispiel 10 Euro. Bitte tausche deinen API Token im Code gegen "DEIN_API_TOKEN_HIER" ein.') }}
+                    {{ __('Verfügbare Farben sind: gray, red, orange, yellow, green, teal, blue, indigo, purple und pink.') }}
                 </p>
                 <pre class="bg-gray-800 rounded text-white mt-4">
                         {{ "
-    <buxale-button color=\"teal\" amount=\"10\" />" }}
+    <buxale-button
+      api_token=\"DEIN_API_TOKEN_HIER\"
+      success_url=\"https://app.buxale.io\"
+      color=\"teal\"
+      cancel_url=\"https://app.buxale.io\"
+      amount=\"15\" />" }}
                 </pre>
             </div>
             <form class="mt-3 text-sm leading-5">
