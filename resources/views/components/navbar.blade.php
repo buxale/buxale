@@ -108,9 +108,9 @@
                 {{--                   class="mt-1 block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:text-gray-800 focus:bg-gray-100 transition duration-150 ease-in-out">Settings</a>--}}
                 <a href="#"
                    class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:text-gray-800 focus:bg-gray-100 transition duration-150 ease-in-out"
-                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                   onclick="event.preventDefault(); document.getElementById('logout-form2').submit();"
                 >Ausloggen</a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                <form id="logout-form2" action="{{ route('logout') }}" method="POST"
                       style="display: none;">
                     @csrf
                 </form>
