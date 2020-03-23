@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+
 class StripeCheckoutController extends Controller
 {
     public function session()
@@ -31,5 +34,34 @@ class StripeCheckoutController extends Controller
             'cancel_url' => request('cancel_url'),
         ]);
         return $session->id;
+    }
+
+    public function webhook(Request $request)
+    {
+        $payload = $request->getBody();
+        $sig_header = $request->getHeaderLine('stripe-signature');
+
+        $event = null;
+
+        // Verify webhook signature and extract the event.
+        // See https://stripe.com/docs/webhooks/signatures for more information.
+        try {
+            $event = \Stripe\Webhook::constructEvent(
+                $payload, $sig_header, config('services.stripe.signature')
+            );
+        } catch (\UnexpectedValueException $e) {
+            // Invalid payload.
+            return response('Invalid payload', 400);
+        } catch (\Stripe\Exception\SignatureVerificationException $e) {
+            // Invalid Signature.
+            return response('Invalid Signature', 400);
+        }
+
+        if ($event->type == 'checkout.session.completed') {
+            $session = $event->data->object;
+            Log::info($session);
+        }
+
+        return response('Ok', 200);
     }
 }
