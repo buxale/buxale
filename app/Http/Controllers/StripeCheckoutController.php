@@ -38,8 +38,8 @@ class StripeCheckoutController extends Controller
 
     public function webhook(Request $request)
     {
-        $payload = $request->getBody();
-        $sig_header = $request->getHeaderLine('stripe-signature');
+        $payload = $request->all();
+        $sig_header = $request->header('stripe-signature');
 
         $event = null;
 
