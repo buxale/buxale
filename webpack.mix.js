@@ -20,3 +20,16 @@ mix.js('resources/js/app.js', 'public/js')
         postCss: [tailwindcss('./tailwind.config.js')],
     })
     .version();
+
+/* custom webpack mix config */
+mix.webpackConfig({
+    watchOptions: {
+        aggregateTimeout: 2000,
+        poll: 2000,
+        ignored: /node_modules/
+        /*ignored: [
+            path.resolve(__dirname, 'node_modules'),
+            path.resolve(__dirname, 'vendor'),
+        ]*/
+    }
+});
