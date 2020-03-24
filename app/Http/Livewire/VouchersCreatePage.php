@@ -40,13 +40,13 @@ class VouchersCreatePage extends Component
             'code' => 'required',
             'value' => 'required|min:1',
             'customer_name' => 'required',
-            'customer_street' => 'required',
-            'customer_street_no' => 'required',
-            'customer_zip' => 'required',
-            'customer_city' => 'required',
-            'customer_country' => 'required',
+            'customer_street' => 'nullable',
+            'customer_street_no' => 'nullable',
+            'customer_zip' => 'nullable',
+            'customer_city' => 'nullable',
+            'customer_country' => 'nullable',
             'customer_email' => 'required',
-            'customer_phone' => 'required',
+            'customer_phone' => 'nullable',
         ]);
 
         (new VoucherRepository())->createFromUser(auth()->user(), $data);
