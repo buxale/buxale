@@ -23,6 +23,9 @@
                                 {{__('Name')}}
                             </th>
                             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                {{__('Rechte')}}
+                            </th>
+                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                 {{__('Zuletzt verwendet')}}
                             </th>
                             <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
@@ -38,6 +41,9 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                                     {{$apiKey->name}}
+                                </td>
+                                <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                    {{Illuminate\Support\Arr::get($apiKey->abilities, 'access', '*')}}
                                 </td>
                                 <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                                     {{$apiKey->last_used_at}}
@@ -90,9 +96,19 @@
             <button
                 type="button"
                 class="inline-flex items-center px-3 py-2 border border-gray-300 text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
-                wire:click="generateApiKey"
+                wire:click="generateApiKey('full')"
             >
-                {{__('Neuen API Key generieren')}}
+                {{__('Neuen Full Access API Key generieren')}}
+            </button>
+        </span>
+
+        <span class="inline-flex rounded-md shadow-sm">
+            <button
+                type="button"
+                class="inline-flex items-center px-3 py-2 border border-gray-300 text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
+                wire:click="generateApiKey('stripe')"
+            >
+                {{__('Neuen Stripe API Key generieren')}}
             </button>
         </span>
     </div>

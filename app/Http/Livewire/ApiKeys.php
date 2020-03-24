@@ -27,10 +27,10 @@ class ApiKeys extends Component
     /**
      * generate a new api key
      */
-    public function generateApiKey()
+    public function generateApiKey($access = 'full')
     {
         $user = auth()->user();
-        $token = $user->createToken('buxale-api-key');
+        $token = $user->createToken('buxale-api-key', ['access' => $access]);
         $this->apiKeys->push($token->accessToken);
         $this->plainTextToken = $token->plainTextToken;
     }
