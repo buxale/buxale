@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class CheckoutSession extends Model
 {
@@ -16,7 +17,7 @@ class CheckoutSession extends Model
     public function toWebhookData()
     {
         return [
-            'ref_id' => $this->ref_id,
+            'ref_id' => $this->getRealRefId(),
             'session_id' => $this->session_id,
             'voucher' => $this->voucher->toArray()
         ];
@@ -25,5 +26,10 @@ class CheckoutSession extends Model
     public function voucher()
     {
         return $this->belongsTo(Voucher::class);
+    }
+
+    public function getRealRefId()
+    {
+        return Str::after($this->ref_id, $this->user_id . '_');
     }
 }

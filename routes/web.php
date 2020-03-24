@@ -32,3 +32,6 @@ Route::middleware(['verified'])->group(function () {
 Route::get('qr-code', 'QrCodeController@generate');
 
 Route::any("/webhooks/stripe-checkout", "StripeCheckoutController@webhook");
+Route::any('/webhooks/test', function () {
+    \Illuminate\Support\Facades\Log::info(request()->all());
+});

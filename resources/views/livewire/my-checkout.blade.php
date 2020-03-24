@@ -40,6 +40,10 @@
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                                 {{ $webhook->events }}
+                                <button
+                                        class="py-1 px-2 ml-2 shadow overflow-hidden sm:rounded-lg border-b border-gray-200"
+                                        wire:click="sendTestWebhook({{$webhook->id}})">Test senden
+                                </button>
                             </td>
                             <td x-data="{ open: false }"
                                 class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\CustomerWebhook;
+use App\SampleWebhook;
 use Illuminate\Support\Str;
 use Livewire\Component;
 
@@ -31,6 +32,11 @@ class MyCheckout extends Component
             'auth_token' => $this->new_auth_token
         ]);
         $this->initiaizeWebhooks();
+    }
+
+    public function sendTestWebhook($hook_id)
+    {
+        SampleWebhook::fire(CustomerWebhook::whereUserId(auth()->id())->find($hook_id));
     }
 
     public function render()
