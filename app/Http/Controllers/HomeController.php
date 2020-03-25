@@ -29,7 +29,7 @@ class HomeController extends Controller
         if ($stripe_account_id) {
             $balance = \Stripe\Balance::retrieve(
                 ['stripe_account' => $stripe_account_id]
-            )->available[0]->amount;
+            )->pending[0]->amount;
         }
 
         $pott_amount = Voucher::where('user_id', auth()->id())->select('value')->sum('value') * (config('buxale.fee') / 100);

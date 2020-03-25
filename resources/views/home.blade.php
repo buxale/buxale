@@ -34,7 +34,7 @@
                         @money($balance, 'EUR')
                     </p>
                     <p class="mt-2 text-lg leading-6 font-medium text-gray-500">
-                        sind zur Auszahlung bereit
+                        Künftige Auszahlungen
                     </p>
                 </div>
             </div>
