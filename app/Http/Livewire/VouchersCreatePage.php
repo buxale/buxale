@@ -42,7 +42,9 @@ class VouchersCreatePage extends Component
         $this->validate([
             'value' => 'numeric'
         ]);
-        $this->pott_amount = $val * $this->getBuxaleFee();
+        if (is_numeric($val)) {
+            $this->pott_amount = $val * $this->getBuxaleFee();
+        }
     }
 
     public function submit()
