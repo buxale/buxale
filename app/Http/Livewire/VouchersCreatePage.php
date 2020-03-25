@@ -30,6 +30,11 @@ class VouchersCreatePage extends Component
 //        ]);
     }
 
+    public function mount()
+    {
+        $this->notify_customer = auth()->user()->notify_users_by_default;
+    }
+
     public function updatedValue($val)
     {
         $this->validate([

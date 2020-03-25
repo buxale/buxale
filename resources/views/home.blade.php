@@ -72,6 +72,9 @@
       cancel_url=\"https://app.buxale.io\"
       amount=\"15\" />" }}
                 </pre>
+                <p class="mt-6">
+                    {{ __('Jetzt kann dein Kunde auf deiner Seite einen Gutschein bestellen, und bekommt diesen auch per Mail zugestellt.') }}
+                </p>
             </div>
             <form class="mt-3 text-sm leading-5">
                 <a href="/mein-checkout"

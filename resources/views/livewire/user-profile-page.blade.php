@@ -41,22 +41,33 @@
                         </div>
 
                         <div class="col-span-6 sm:col-span-5">
-                            <label for="country" class="block text-sm font-medium leading-5 text-gray-700">{{ __('Land') }}</label>
-                            <input wire:model="user.country" name="country" class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+                            <label for="country"
+                                   class="block text-sm font-medium leading-5 text-gray-700">{{ __('Land') }}</label>
+                            <input wire:model="user.country" name="country"
+                                   class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"/>
                         </div>
 
                         <div class="col-span-6 sm:col-span-5">
-                            <label for="phone" class="block text-sm font-medium leading-5 text-gray-700">{{ __('Telefon') }}</label>
-                            <input wire:model="user.phone" name="phone" class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+                            <label for="phone"
+                                   class="block text-sm font-medium leading-5 text-gray-700">{{ __('Telefon') }}</label>
+                            <input wire:model="user.phone" name="phone"
+                                   class="mt-1 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"/>
                         </div>
 
+                        <div class="col-span-6 sm:col-span-5">
+                            <label for="notify_users_by_default"
+                                   class="block text-sm font-medium leading-5 text-gray-700">{{ __('Kunden bei über Gutscheine benachrichtigen') }}</label>
+                            <input id="notify_users_by_default" wire:model="user.notify_users_by_default"
+                                   type="checkbox"
+                                   class="form-checkbox h-4 w-4 text-brand transition duration-150 ease-in-out"/>
+                        </div>
 
                         <div class="col-span-6 sm:col-span-5">
                             <span class="inline-flex rounded-md shadow-sm">
                                 <button
-                                    type="button"
-                                    class="inline-flex items-center px-3 py-2 border border-gray-300 text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
-                                    wire:click="update"
+                                        type="button"
+                                        class="inline-flex items-center px-3 py-2 border border-gray-300 text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
+                                        wire:click="update"
                                 >
                                     {{__('Speichern')}}
                                 </button>

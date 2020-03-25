@@ -31,6 +31,7 @@ class UserProfilePage extends Component
             'city' => $this->user['city'],
             'country' => $this->user['country'],
             'phone' => $this->user['phone'],
+            'notify_users_by_default' => $this->user['notify_users_by_default'],
         ]);
 
         $this->showSuccess = true;
