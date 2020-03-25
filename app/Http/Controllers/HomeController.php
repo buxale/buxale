@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class HomeController extends Controller
 {
     /**
@@ -23,7 +21,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        return view('home');
+        $stripe_account_id = auth()->user()->stripe_account_id;
+        $balance = 0;
+        if ($stripe_account_id) {
+            $balance = \Stripe\Balance::retrieve(
+                ['stripe_account' => $stripe_account_id]
+            )->pending[0]->amount;
+        }
+        return view('home', compact('balance'));
     }
 }
