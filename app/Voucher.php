@@ -47,6 +47,30 @@ class Voucher extends Model
         'used_at',
     ];
 
+    
+    /* ACCESSORS & MUTATORS */
+
+    /**
+     * Get customers name
+     *
+     * @return string
+     */
+    public function getNameAttribute()
+    {
+        return $this->customer_name;
+    }
+
+    /**
+     * Get customers email
+     *
+     * @return string
+     */
+    public function getEmailAttribute()
+    {
+        return $this->customer_email;
+    }
+
+
     /* RELATIONS */
 
     /**
@@ -55,15 +79,5 @@ class Voucher extends Model
     public function user()
     {
         return $this->belongsTo(User::Class);
-    }
-
-    public function getNameAttribute()
-    {
-        return $this->customer_name;
-    }
-
-    public function getEmailAttribute()
-    {
-        return $this->customer_email;
     }
 }
