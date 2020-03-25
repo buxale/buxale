@@ -3,3 +3,5 @@
 - ## BuxButton
     - [Implementierung](/{{route}}/{{version}}/buxale-button/integration)
     - [Button API](/{{route}}/{{version}}/buxale-button/button-api)
+- ## Buxale API
+    - [Voucher speichern](/{{route}}/{{version}}/buxale-api/store-voucher)
