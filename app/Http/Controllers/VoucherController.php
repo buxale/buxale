@@ -40,7 +40,7 @@ class VoucherController extends Controller
     public function store(Request $request)
     {
         $verifiedData = $request->validate([
-            'code' => ['required'],
+            'code' => ['required', 'unique:vouchers,code'],
             'value' => ['required'],
             'meta' => ['nullable', 'json'],
 
