@@ -32,7 +32,7 @@ class HomeController extends Controller
             )->pending[0]->amount;
         }
 
-        $pott_amount = Voucher::where('user_id', auth()->id())->select('value')->sum('value') * (config('buxale.fee') / 100);
+        $pott_amount = Voucher::where('user_id', auth()->id())->select('value')->sum('value') * config('buxale.fee');
         $vouchers_this_week = Voucher::where('user_id', auth()->id())->where('created_at', '>', now()->subWeek())->count();
         return view('home', compact('balance', 'pott_amount', 'vouchers_this_week'));
     }
