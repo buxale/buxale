@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Voucher;
+
 class HomeController extends Controller
 {
     /**
@@ -23,11 +25,15 @@ class HomeController extends Controller
     {
         $stripe_account_id = auth()->user()->stripe_account_id;
         $balance = 0;
+
         if ($stripe_account_id) {
             $balance = \Stripe\Balance::retrieve(
                 ['stripe_account' => $stripe_account_id]
-            )->pending[0]->amount;
+            )->available[0]->amount;
         }
-        return view('home', compact('balance'));
+
+        $pott_amount = Voucher::where('user_id', auth()->id())->select('value')->sum('value') * (config('buxale.fee') / 100);
+        $vouchers_this_week = Voucher::where('user_id', auth()->id())->where('created_at', '>', now()->subWeek())->count();
+        return view('home', compact('balance', 'pott_amount', 'vouchers_this_week'));
     }
 }

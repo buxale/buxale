@@ -7,7 +7,7 @@
             <div class="bg-white shadow sm:rounded-lg">
                 <div class="border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r">
                     <p class="text-5xl leading-none font-extrabold text-brand">
-                        18
+                        {{$vouchers_this_week}}
                     </p>
                     <p class="mt-2 text-lg leading-6 font-medium text-gray-500">
                         neue Gutscheine diese Woche
@@ -19,7 +19,7 @@
             <div class="bg-white shadow sm:rounded-lg">
                 <div class="border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r">
                     <p class="text-5xl leading-none font-extrabold text-brand">
-                        120€
+                        @money($pott_amount, 'EUR')
                     </p>
                     <p class="mt-2 text-lg leading-6 font-medium text-gray-500">
                         Beitrag zum Pott
