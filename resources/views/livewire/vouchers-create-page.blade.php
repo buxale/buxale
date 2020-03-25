@@ -102,19 +102,44 @@
                                                 Absicherung.</p>
                                         </div>
                                     </div>
-                                    {{--                                    <div class="mt-4">--}}
-                                    {{--                                        <div class="relative flex items-start">--}}
-                                    {{--                                            <div class="absolute flex items-center h-5">--}}
-                                    {{--                                                <input id="candidates" type="checkbox"--}}
-                                    {{--                                                       class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"/>--}}
-                                    {{--                                            </div>--}}
-                                    {{--                                            <div class="pl-7 text-sm leading-5">--}}
-                                    {{--                                                <label for="candidates"--}}
-                                    {{--                                                       class="font-medium text-gray-700">Kopie an mich</label>--}}
-                                    {{--                                                <p class="text-gray-500">Sende eine Kopie der Mail auch an mich!</p>--}}
-                                    {{--                                            </div>--}}
-                                    {{--                                        </div>--}}
-                                    {{--                                    </div>--}}
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="mt-6">
+                        <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-baseline">
+                            <div>
+                                <legend class="text-base leading-6 font-medium text-gray-900 sm:text-sm sm:leading-5 sm:text-gray-700">
+                                    Bazahlung
+                                </legend>
+                            </div>
+                            <div class="mt-4 sm:mt-0 sm:col-span-2">
+                                <div class="max-w-lg">
+
+                                    <div class="relative flex items-start">
+                                        <div class="absolute flex items-center h-5">
+                                            <input id="open_for_payment" wire:model="open_for_payment" type="checkbox"
+                                                   class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"/>
+                                        </div>
+                                        <div class="pl-7 text-sm leading-5">
+                                            <label for="open_for_payment" class="font-medium text-gray-700">Ermögliche
+                                                Zahlung</label>
+                                            <p class="text-gray-500">Lasse deinen Kunden den Gutschein bequem online
+                                                bezahlen.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative flex items-start mt-3">
+                                        <div class="absolute flex items-center h-5">
+                                            <input id="already_paid" wire:model="already_paid" type="checkbox"
+                                                   class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"/>
+                                        </div>
+                                        <div class="pl-7 text-sm leading-5">
+                                            <label for="already_paid" class="font-medium text-gray-700">Gutschein
+                                                <strong class="font-bold">ist bezahlt</strong></label>
+                                            <p class="text-gray-500">Hat dein Kunde den Gutschein schon bezahlt?</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -37,24 +37,34 @@
             <h1 class="font-bold text-3xl">Dein Gutschein über</h1>
             <h2 class="font-bold text-5xl">@money($voucher->value * 100, 'EUR')</h2>
 
+            @if($voucher->paid_at)
+                <span class="my-3 inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium leading-5 bg-green-100 text-green-800">
+                  Bezahlt
+                </span><br>
+            @endif
+
             <span>Dein Code: {{$voucher->code}}</span>
             <div class="flex justify-center">
                 {!! QrCode::size(300)->generate($voucher->code); !!}
             </div>
 
-            <p class="text-gray-500 mt-6">Dein Gutschein von {{$voucher->user->company}} sollte erst eingelöst werden, nach unserem Stichtag, dem 01.10.2020, wobei du natürlich
-            jede Freiheit hast, den Gutschein auch vorher einzulösen.</p>
-            @if(!$voucher->paid_at && false)
+            <p class="text-gray-500 mt-6">Dein Gutschein von {{$voucher->user->company}} sollte erst nach unserem
+                Stichtag, dem 01.10.2020, eingelöst werden. Wobei du natürlich
+                jede Freiheit hast, den Gutschein auch vorher einzulösen.</p>
+            @if(!$voucher->paid_at && $voucher->open_for_payment)
                 <div class="flex justify-center">
-                    <buxale-button api_token="e6FUjaw1tEBJxZ8cDWHxRjoUHZTDfwe4WD8IXFOPJ7fDx0X7zAq9nCgbOUTjHvokhsURjnP70gkz1aaU"
-                                   voucher_id="{{$voucher->id}}"
-                                   success_url="https://cierra.de/" cancel_url="https://app.buxale.io" amount="{{$voucher->value}}" />
+                    <buxale-button
+                            api_token="{{ config('buxale.main_api_token') }}"
+                            voucher_id="{{$voucher->id}}"
+                            success_url="https://cierra.de/" cancel_url="https://app.buxale.io"
+                            amount="{{$voucher->value}}"/>
                 </div>
-                @else
+            @else
                 <div class="flex justify-center no-print">
                     <div class="p-4">
                         <div class="flex">
-                            <button type="button" onclick="window.print()" class="inline-flex whitespace-no-wrap h-12 items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded focus:outline-none transition ease-in-out overflow-hidden duration-150 focus:border-green-300 text-green-50 bg-brand hover:bg-green-400 focus:shadow-outline-brand active:bg-green-500">
+                            <button type="button" onclick="window.print()"
+                                    class="inline-flex whitespace-no-wrap h-12 items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded focus:outline-none transition ease-in-out overflow-hidden duration-150 focus:border-green-300 text-green-50 bg-brand hover:bg-green-400 focus:shadow-outline-brand active:bg-green-500">
                                 <span class="whitespace-no-wrap">Drucke Beleg von </span>
                                 <img src="https://app.buxale.io/img/buxale-logo.png" v-if="showBuxale" class="logo" alt="">
                             </button>

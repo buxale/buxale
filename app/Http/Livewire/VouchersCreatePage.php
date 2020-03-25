@@ -21,6 +21,8 @@ class VouchersCreatePage extends Component
     public $customer_email;
     public $customer_phone;
     public $notify_customer = false;
+    public $already_paid = false;
+    public $open_for_payment = true;
 
 
     public function updating()
@@ -58,7 +60,7 @@ class VouchersCreatePage extends Component
             'customer_phone' => 'nullable',
         ]);
 
-        (new VoucherRepository())->createFromUser(auth()->user(), $data, $this->notify_customer);
+        (new VoucherRepository())->createFromUser(auth()->user(), $data, $this->notify_customer, $this->already_paid, $this->open_for_payment);
 
         return $this->redirect('/vouchers');
     }

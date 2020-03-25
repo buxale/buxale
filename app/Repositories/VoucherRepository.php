@@ -44,7 +44,11 @@ class VoucherRepository
         return $voucher;
     }
 
-    public function createFromUser(User $user, array $voucherData, bool $notifyUser = false)
+    public function createFromUser(User $user,
+                                   array $voucherData,
+                                   bool $notifyUser = false,
+                                   bool $alreadyPaid = false,
+                                   bool $openForPayment = true)
     {
         $voucherData['beneficiary_company'] = $user->company;
         $voucherData['beneficiary_name'] = $user->name;
@@ -77,6 +81,8 @@ class VoucherRepository
             'customer_country' => Arr::get($voucherData, 'customer_country', NULL),
             'customer_email' => Arr::get($voucherData, 'customer_email', NULL),
             'customer_phone' => Arr::get($voucherData, 'customer_phone', NULL),
+            'paid_at' => $alreadyPaid ? now()->toDateTimeString() : NULL,
+            'open_for_payment' => $openForPayment
         ]);
 
         $this->notifyCustomer($notifyUser, $voucher);

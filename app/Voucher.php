@@ -36,6 +36,8 @@ class Voucher extends Model
         'customer_country',
         'customer_email',
         'customer_phone',
+        'open_for_payment',
+        'paid_at'
     ];
 
     /**
