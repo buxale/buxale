@@ -30,9 +30,17 @@ Route::middleware(['verified'])->group(function () {
     Route::get('stripe_redirect', 'StripeAuthController@handle');
 });
 
+
+// QR endpoint
 Route::get('qr-code', 'QrCodeController@generate');
 
+// Public endpoints
+Route::get('/public/vouchers/{voucher}', function (\App\Voucher $voucher) {
+    return 'OK - ' . $voucher->id;
+})
+    ->name('public.voucher')
+    ->middleware('signed');
+
+
+// Webhooks for the stripe events
 Route::any("/webhooks/stripe-checkout", "StripeCheckoutController@webhook");
-Route::any('/webhooks/test', function () {
-    \Illuminate\Support\Facades\Log::info(request()->all());
-});

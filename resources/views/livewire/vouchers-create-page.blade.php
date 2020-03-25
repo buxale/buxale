@@ -92,29 +92,29 @@
                                 <div class="max-w-lg">
                                     <div class="relative flex items-start">
                                         <div class="absolute flex items-center h-5">
-                                            <input id="comments" type="checkbox"
+                                            <input id="notify_customer" wire:model="notify_customer" type="checkbox"
                                                    class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"/>
                                         </div>
                                         <div class="pl-7 text-sm leading-5">
-                                            <label for="comments" class="font-medium text-gray-700">Sende
+                                            <label for="notify_customer" class="font-medium text-gray-700">Sende
                                                 Bestätigung</label>
                                             <p class="text-gray-500">Benachrichtige den Kunden über seine buxale
                                                 Absicherung.</p>
                                         </div>
                                     </div>
-                                    <div class="mt-4">
-                                        <div class="relative flex items-start">
-                                            <div class="absolute flex items-center h-5">
-                                                <input id="candidates" type="checkbox"
-                                                       class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"/>
-                                            </div>
-                                            <div class="pl-7 text-sm leading-5">
-                                                <label for="candidates"
-                                                       class="font-medium text-gray-700">Kopie an mich</label>
-                                                <p class="text-gray-500">Sende eine Kopie der Mail auch an mich!</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {{--                                    <div class="mt-4">--}}
+                                    {{--                                        <div class="relative flex items-start">--}}
+                                    {{--                                            <div class="absolute flex items-center h-5">--}}
+                                    {{--                                                <input id="candidates" type="checkbox"--}}
+                                    {{--                                                       class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"/>--}}
+                                    {{--                                            </div>--}}
+                                    {{--                                            <div class="pl-7 text-sm leading-5">--}}
+                                    {{--                                                <label for="candidates"--}}
+                                    {{--                                                       class="font-medium text-gray-700">Kopie an mich</label>--}}
+                                    {{--                                                <p class="text-gray-500">Sende eine Kopie der Mail auch an mich!</p>--}}
+                                    {{--                                            </div>--}}
+                                    {{--                                        </div>--}}
+                                    {{--                                    </div>--}}
                                 </div>
                             </div>
                         </div>

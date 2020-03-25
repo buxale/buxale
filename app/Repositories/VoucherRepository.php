@@ -3,6 +3,7 @@
 
 namespace App\Repositories;
 
+use App\Notifications\NewVoucherNotification;
 use App\User;
 use Illuminate\Support\Arr;
 
@@ -11,9 +12,10 @@ class VoucherRepository
     /**
      * @param User $user
      * @param array $voucherData
+     * @param bool $notifyUser
      * @return \Illuminate\Database\Eloquent\Model Voucher
      */
-    public function create(User $user, array $voucherData)
+    public function create(User $user, array $voucherData, bool $notifyUser = false)
     {
         $voucher = $user->vouchers()->create([
             'code' => Arr::get($voucherData, 'code', NULL),
@@ -38,10 +40,11 @@ class VoucherRepository
             'customer_phone' => Arr::get($voucherData, 'customer_phone', NULL),
         ]);
 
+        $this->notifyCustomer($notifyUser, $voucher);
         return $voucher;
     }
 
-    public function createFromUser(User $user, array $voucherData)
+    public function createFromUser(User $user, array $voucherData, bool $notifyUser = false)
     {
         $voucherData['beneficiary_company'] = $user->company;
         $voucherData['beneficiary_name'] = $user->name;
@@ -76,6 +79,18 @@ class VoucherRepository
             'customer_phone' => Arr::get($voucherData, 'customer_phone', NULL),
         ]);
 
+        $this->notifyCustomer($notifyUser, $voucher);
         return $voucher;
+    }
+
+    /**
+     * @param bool $notifyUser
+     * @param \Illuminate\Database\Eloquent\Model $voucher
+     */
+    public function notifyCustomer(bool $notifyUser, \Illuminate\Database\Eloquent\Model $voucher): void
+    {
+        if ($notifyUser) {
+            $voucher->notify(new NewVoucherNotification($voucher));
+        }
     }
 }

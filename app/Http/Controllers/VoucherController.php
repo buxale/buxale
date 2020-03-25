@@ -65,7 +65,7 @@ class VoucherController extends Controller
         ]);
 
         $user = auth()->user();
-        $voucher = $this->voucherRepository->create($user, $verifiedData);
+        $voucher = $this->voucherRepository->create($user, $verifiedData, true);
 
         return new VoucherResource($voucher);
     }

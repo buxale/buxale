@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
 
 class Voucher extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -54,5 +55,15 @@ class Voucher extends Model
     public function user()
     {
         return $this->belongsTo(User::Class);
+    }
+
+    public function getNameAttribute()
+    {
+        return $this->customer_name;
+    }
+
+    public function getEmailAttribute()
+    {
+        return $this->customer_email;
     }
 }

@@ -20,17 +20,21 @@ class VouchersCreatePage extends Component
     public $customer_country = 'Deutschland';
     public $customer_email;
     public $customer_phone;
+    public $notify_customer = false;
 
 
     public function updating()
     {
-        $this->validate([
-            'value' => 'numeric'
-        ]);
+//        $this->validate([
+//            'value' => 'numeric'
+//        ]);
     }
 
     public function updatedValue($val)
     {
+        $this->validate([
+            'value' => 'numeric'
+        ]);
         $this->pott_amount = $val * $this->getBuxaleFee();
     }
 
@@ -49,7 +53,7 @@ class VouchersCreatePage extends Component
             'customer_phone' => 'nullable',
         ]);
 
-        (new VoucherRepository())->createFromUser(auth()->user(), $data);
+        (new VoucherRepository())->createFromUser(auth()->user(), $data, $this->notify_customer);
 
         return $this->redirect('/vouchers');
     }
