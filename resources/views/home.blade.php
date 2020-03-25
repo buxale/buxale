@@ -10,7 +10,7 @@
                         {{$vouchers_this_week}}
                     </p>
                     <p class="mt-2 text-lg leading-6 font-medium text-gray-500">
-                        neue Gutscheine diese Woche
+                        Neue Gutscheine diese Woche
                     </p>
                 </div>
             </div>

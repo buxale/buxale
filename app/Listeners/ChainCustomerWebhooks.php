@@ -30,5 +30,7 @@ class ChainCustomerWebhooks
         foreach ($checkout_session->user->customer_webhooks as $customer_webhook) {
             Http::withToken($customer_webhook->auth_token)->post($customer_webhook->webhook, $checkout_session->toWebhookData());
         }
+
+        $checkout_session->voucher->update(['paid_at' => now()->toDateTimeString()]);
     }
 }
