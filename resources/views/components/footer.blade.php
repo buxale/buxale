@@ -1,6 +1,6 @@
 <div class="bg-white">
     <div class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
-        <div class="flex justify-center md:order-2">
+        <div class="flex justify-center md:order-2 no-print">
             <a href="https://twitter.com/BuxaleIo" target="_blank" class="ml-6 text-gray-400 hover:text-gray-500">
                 <span class="sr-only">Twitter</span>
                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">

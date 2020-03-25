@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\CheckoutSession;
 use App\Events\CheckoutFulfilled;
 use App\Repositories\VoucherRepository;
+use App\Voucher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -27,7 +28,8 @@ class StripeCheckoutController extends Controller
             'success_url' => 'required',
             'cancel_url' => 'required',
             'ref_id' => 'nullable',
-            'code' => 'nullable'
+            'code' => 'nullable',
+            'voucher_id' => 'nullable'
         ]);
 
         $amount = intval(request('amount')) * 100;
@@ -51,10 +53,20 @@ class StripeCheckoutController extends Controller
         $code = request()->input('code', Str::uuid());
 
         // create an empty, unpaid voucher
-        $voucher = $this->voucherRepository->createFromUser(auth()->user(), [
-            'code' => $code,
-            'value' => intval(request('amount'))
-        ]);
+        if(request()->has('voucher_id')) {
+            $voucher_found = Voucher::find(request('voucher_id'));
+            if($voucher_found && $voucher_found->user_id === auth()->id()) {
+                $voucher = $voucher_found;
+            }
+            if($voucher->paid_at) {
+                return response(__('Gutschein bereits bezahlt!'), 400);
+            }
+        } else { // create a new voucher if no existing found
+            $voucher = $this->voucherRepository->createFromUser(auth()->user(), [
+                'code' => $code,
+                'value' => intval(request('amount'))
+            ]);
+        }
 
         // References. Allow custom references, but if there is a dup, return 400
         $combined_ref = null;

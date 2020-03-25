@@ -35,9 +35,7 @@ Route::middleware(['verified'])->group(function () {
 Route::get('qr-code', 'QrCodeController@generate');
 
 // Public endpoints
-Route::get('/public/vouchers/{voucher}', function (\App\Voucher $voucher) {
-    return 'OK - ' . $voucher->id;
-})
+Route::get('/public/vouchers/{voucher}', 'PublicVoucherController@show')
     ->name('public.voucher')
     ->middleware('signed');
 
