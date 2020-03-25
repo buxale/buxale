@@ -56,7 +56,7 @@
                     <buxale-button
                             api_token="{{ config('buxale.main_api_token') }}"
                             voucher_id="{{$voucher->id}}"
-                            success_url="https://cierra.de/" cancel_url="https://app.buxale.io"
+                            success_url="{{url()->full()}}" cancel_url="{{url()->full()}}"
                             amount="{{$voucher->value}}"/>
                 </div>
             @else
@@ -66,7 +66,8 @@
                             <button type="button" onclick="window.print()"
                                     class="inline-flex whitespace-no-wrap h-12 items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded focus:outline-none transition ease-in-out overflow-hidden duration-150 focus:border-green-300 text-green-50 bg-brand hover:bg-green-400 focus:shadow-outline-brand active:bg-green-500">
                                 <span class="whitespace-no-wrap">Drucke Beleg von </span>
-                                <img src="https://app.buxale.io/img/buxale-logo.png" v-if="showBuxale" class="logo" alt="">
+                                <img src="https://app.buxale.io/img/buxale-logo.png" v-if="showBuxale" class="logo"
+                                     alt="">
                             </button>
                         </div>
                     </div>
