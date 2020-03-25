@@ -5,6 +5,9 @@
     <div class="flex flex-wrap mb-6">
         <div class="w-full sm:w-1/3 pl-3 pr-3 sm:pl-0">
             <div class="bg-white shadow sm:rounded-lg">
+                <div class="float-right mr-2 mt-2" style="width: 20px;">
+                    <a href="{{route('voucher.create')}}"><x-icons.add-icon></x-icons.add-icon></a>
+                </div>
                 <div class="border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r">
                     <p class="text-5xl leading-none font-extrabold text-brand">
                         {{$vouchers_this_week}}
