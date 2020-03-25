@@ -23,8 +23,9 @@ Route::middleware(['verified'])->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::livewire('/api-keys', 'api-keys-page')->layout('layouts.app', ['title' => 'API Keys']);
     Route::livewire('/mein-checkout', 'my-checkout')->layout('layouts.app', ['title' => 'Mein Checkout']);
-    Route::livewire('/vouchers', 'vouchers-index-page')->layout('layouts.app', ['title' => __('Meine Gutscheine')]);
+    Route::livewire('/vouchers', 'vouchers-index-page')->layout('layouts.app', ['title' => __('Meine Gutscheine')])->name('vouchers.index');
     Route::livewire('/vouchers/create', 'vouchers-create-page')->layout('layouts.app', ['title' => __('Neuer Gutschein')]);
+    Route::livewire('/vouchers/{voucher}', 'vouchers-show-page')->layout('layouts.app', ['title' => __('Gutschein')]);
     Route::livewire('/user/profile', 'user-profile-page')->layout('layouts.app', ['title' => __('User Profil')]);
     Route::get('stripe_redirect', 'StripeAuthController@handle');
 });
