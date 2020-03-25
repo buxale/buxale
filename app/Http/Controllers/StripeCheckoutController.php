@@ -33,33 +33,19 @@ class StripeCheckoutController extends Controller
         ]);
 
         $amount = intval(request('amount')) * 100;
-        $session = \Stripe\Checkout\Session::create([
-            'payment_method_types' => ['card'],
-            'line_items' => [[
-                'name' => "Gutschein für " . auth()->user()->company,
-                'amount' => $amount,
-                'currency' => 'eur',
-                'quantity' => 1,
-            ]],
-            'payment_intent_data' => [
-                'application_fee_amount' => $amount * (config('buxale.fee') / 100),
-                'transfer_data' => [
-                    'destination' => auth()->user()->stripe_account_id,
-                ],
-            ],
-            'success_url' => request('success_url'),
-            'cancel_url' => request('cancel_url'),
-        ]);
         $code = request()->input('code', Str::uuid());
 
         // create an empty, unpaid voucher
-        if(request()->has('voucher_id')) {
-            $voucher_found = Voucher::find(request('voucher_id'));
-            if($voucher_found && $voucher_found->user_id === auth()->id()) {
+        $voucher_found = Voucher::find(request('voucher_id'));
+        if (request()->has('voucher_id') && $voucher_found) {
+            // if voucher found, make sure the permissions are correct.
+            if ($voucher_found->user_id === auth()->id() || auth()->user()->is_admin) {
                 $voucher = $voucher_found;
-            }
-            if($voucher->paid_at) {
-                return response(__('Gutschein bereits bezahlt!'), 400);
+                if ($voucher->paid_at) { // return error, if voucher is already paid
+                    return response(__('Gutschein bereits bezahlt!'), 400);
+                }
+            } else { // no permissions, return error.
+                return response(__('Berechtigung nicht ausreichend für diesen Gutschein'), 403);
             }
         } else { // create a new voucher if no existing found
             $voucher = $this->voucherRepository->createFromUser(auth()->user(), [
@@ -67,6 +53,26 @@ class StripeCheckoutController extends Controller
                 'value' => intval(request('amount'))
             ]);
         }
+
+
+        $session = \Stripe\Checkout\Session::create([
+            'payment_method_types' => ['card'],
+            'line_items' => [[
+                'name' => "Gutschein für " . $voucher->user->company,
+                'amount' => $amount,
+                'currency' => 'eur',
+                'quantity' => 1,
+            ]],
+            'payment_intent_data' => [
+                'application_fee_amount' => $amount * (config('buxale.fee') / 100),
+                'transfer_data' => [
+                    'destination' => $voucher->user->stripe_account_id,
+                ],
+            ],
+            'success_url' => request('success_url'),
+            'cancel_url' => request('cancel_url'),
+        ]);
+
 
         // References. Allow custom references, but if there is a dup, return 400
         $combined_ref = null;

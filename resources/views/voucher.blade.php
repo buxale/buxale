@@ -54,7 +54,7 @@
             @if(!$voucher->paid_at && $voucher->open_for_payment)
                 <div class="flex justify-center">
                     <buxale-button
-                            api_token="e6FUjaw1tEBJxZ8cDWHxRjoUHZTDfwe4WD8IXFOPJ7fDx0X7zAq9nCgbOUTjHvokhsURjnP70gkz1aaU"
+                            api_token="{{ config('buxale.main_api_token') }}"
                             voucher_id="{{$voucher->id}}"
                             success_url="https://cierra.de/" cancel_url="https://app.buxale.io"
                             amount="{{$voucher->value}}"/>
@@ -63,7 +63,8 @@
                 <div class="flex justify-center no-print">
                     <div class="p-4">
                         <div class="flex">
-                            <button type="button" onclick="window.print()" class="inline-flex whitespace-no-wrap h-12 items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded focus:outline-none transition ease-in-out overflow-hidden duration-150 focus:border-green-300 text-green-50 bg-brand hover:bg-green-400 focus:shadow-outline-brand active:bg-green-500">
+                            <button type="button" onclick="window.print()"
+                                    class="inline-flex whitespace-no-wrap h-12 items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded focus:outline-none transition ease-in-out overflow-hidden duration-150 focus:border-green-300 text-green-50 bg-brand hover:bg-green-400 focus:shadow-outline-brand active:bg-green-500">
                                 <span class="whitespace-no-wrap">Drucke Beleg von </span>
                                 <img src="https://app.buxale.io/img/buxale-logo.png" v-if="showBuxale" class="logo" alt="">
                             </button>
