@@ -38,7 +38,7 @@ Route::get('qr-code', 'QrCodeController@generate');
 Route::get('/public/vouchers/{voucher}', 'PublicVoucherController@show')
     ->name('public.voucher')
     ->middleware('signed');
-
+Route::livewire('/pages/{slug}', 'merchant-page')->layout('layouts.public');
 
 // Webhooks for the stripe events
 Route::any("/webhooks/stripe-checkout", "StripeCheckoutController@webhook");

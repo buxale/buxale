@@ -153,5 +153,43 @@
                 </table>
             </div>
         </div>
+
+        <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 mt-6">
+            <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200 p-4">
+
+                <div class="md:grid md:grid-cols-3 md:gap-6">
+                    <div class="md:col-span-1">
+                        <h3 class="text-lg font-medium leading-6 text-gray-900">Dein interner Checkout</h3>
+                        <p class="mt-1 text-sm leading-5 text-gray-500">
+                            Hier kannst Du aktivieren ob dein Checkout unter <a class="text-brand underline"
+                                                                                target="_blank"
+                                                                                href="{{url(auth()->user()->checkout_url)}}">Deinem
+                                Checkout</a> aktiviert sein soll. Außerdem siehst du den public Token, der verwendet
+                            wird.
+                        </p>
+                    </div>
+                    <div class="mt-5 md:mt-0 md:col-span-2">
+                        <div class="grid grid-cols-6 gap-6">
+                            @if(auth()->user()->checkout_token)
+                                <div class="col-span-6 sm:col-span-5 flex flex-wrap">
+                                    <label for="checkout_token"
+                                           class="block text-sm font-medium leading-5 text-gray-700">{{ __('Mein Checkout token') }}</label>
+                                    <input wire:model="checkout_token" name="checkout_token"
+                                           disabled
+                                           class="mt-1 text-gray-400 form-input block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"/>
+                                </div>
+                            @else
+                                <div class="w-full flex-col justify-center mt-4">
+                                    <button
+                                            class="py-1 px-2 ml-2 shadow overflow-hidden sm:rounded-lg border-b border-gray-200 whitespace-no-wrap"
+                                            wire:click="activateCheckout()">Checkout aktivieren
+                                    </button>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

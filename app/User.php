@@ -17,7 +17,19 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password', 'company', 'street', 'street_no', 'zip', 'city', 'country', 'phone', 'stripe_account_id', 'notify_users_by_default'];
+    protected $fillable = ['name',
+        'email',
+        'password',
+        'company',
+        'street',
+        'street_no',
+        'zip',
+        'city',
+        'country',
+        'phone',
+        'stripe_account_id',
+        'notify_users_by_default',
+        'checkout_token'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -58,6 +70,14 @@ class User extends Authenticatable implements MustVerifyEmail
     public function isAdmin()
     {
         return Str::endsWith($this->email, ['@cierra.de', '@buxale.io']);
+    }
+
+    public function getCheckoutUrlAttribute()
+    {
+        if ($this->slug)
+            return '/pages/' . $this->slug;
+
+        return '/pages/' . $this->id;
     }
 
 }

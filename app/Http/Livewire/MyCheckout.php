@@ -13,9 +13,16 @@ class MyCheckout extends Component
     public $new_webhook = "";
     public $new_auth_token = "";
 
+    public $checkout_token;
+
     public function mount()
     {
         $this->initiaizeWebhooks();
+    }
+
+    public function saveInternalCheckoutToken()
+    {
+        return auth()->user()->update(['checkout_token' => $this->checkout_token]);
     }
 
     public function deleteHook($hook_id)
@@ -39,6 +46,14 @@ class MyCheckout extends Component
         SampleWebhook::fire(CustomerWebhook::whereUserId(auth()->id())->find($hook_id));
     }
 
+    public function activateCheckout()
+    {
+        $user = auth()->user();
+        $token = $user->createToken('buxale-api-key', ['access' => 'stripe']);
+        $user->update(['checkout_token' => $token->plainTextToken]);
+        $this->checkout_token = $token->plainTextToken;
+    }
+
     public function render()
     {
         return view('livewire.my-checkout');
@@ -49,5 +64,6 @@ class MyCheckout extends Component
         $this->webhooks = CustomerWebhook::whereUserId(auth()->id())->get();
         $this->new_webhook = "";
         $this->new_auth_token = Str::uuid()->toString();
+        $this->checkout_token = auth()->user()->checkout_token;
     }
 }
