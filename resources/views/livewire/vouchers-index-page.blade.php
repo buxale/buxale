@@ -16,6 +16,11 @@
 </div>
 
 <div class="bg-white shadow overflow-hidden sm:rounded-md mt-6">
+    @if(!$vouchers->count())
+        <div class="text-center">
+            <span class="block font-hairline font-xl mt-6 text-3xl text-gray-300">{{__('Noch keine Gutscheine vorhanden')}}</span>
+        </div>
+    @endif
     <ul>
         @foreach($vouchers as $voucher)
             <li @if(!$loop->first)  class="border-t border-gray-200" @endif >
@@ -27,9 +32,9 @@
                                 {{$voucher->code}} - @money($voucher->value * 100, 'EUR')
                             </div>
                             <div class="ml-2 flex-shrink-0 flex">
-              <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                Nicht eingelöst
-              </span>
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                    Nicht eingelöst
+                                </span>
                             </div>
                         </div>
                         <div class="mt-2 sm:flex sm:justify-between">
@@ -59,8 +64,8 @@
                                           clip-rule="evenodd"/>
                                 </svg>
                                 <span>
-                Erstellt am {{ $voucher->created_at->format('d.m.Y') }} um {{ $voucher->created_at->format('H:i') }}
-              </span>
+                                    Erstellt am {{ $voucher->created_at->format('d.m.Y') }} um {{ $voucher->created_at->format('H:i') }}
+                                </span>
                             </div>
                         </div>
                     </div>
