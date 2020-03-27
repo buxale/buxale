@@ -136,7 +136,7 @@
                                                placeholder="1234-1234-1234-1234"/>
                                     </div>
                                 </div>
-                                <p class="text-gray-500 mt-2">Den Token kannst du nach belieben anpassen.</p>
+                                <p class="text-gray-500 mt-2">Den Token kannst du nach Belieben anpassen.</p>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                                 all
