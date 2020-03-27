@@ -1,5 +1,5 @@
 <div class="py-10 container mx-auto flex justify-center">
-    <div class="rounded w-full lg:w-2/3 bg-white shadow border border-gray-200 p-24 px-24 text-center">
+    <div class="rounded w-full lg:w-2/3 bg-white shadow border border-gray-200 p-4 md:p-24 md:px-24 text-center">
         <div class="flex justify-center my-6">
             <img class="h-12 w-auto" src="/img/buxale-logo.png" alt=""/>
         </div>
