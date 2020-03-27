@@ -18,6 +18,9 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
+    {{-- favicon --}}
+    <link rel="icon" href="{{ URL::asset('img/buxale-favicon.png') }}" type="image/x-icon"/>
+
     @if(auth()->user())
         @livewireStyles
     @endif
