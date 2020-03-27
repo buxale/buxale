@@ -17,6 +17,8 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js" defer></script>
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+
     <script src="https://js.stripe.com/v3/"></script>
 
     @livewireStyles
@@ -24,7 +26,7 @@
     <link href="https://js.buxale.io/css/app.css" rel="stylesheet"/>
 
 </head>
-<body>
+<body class="font-sans">
 <div>
     <x-announce/>
     @yield('content')
