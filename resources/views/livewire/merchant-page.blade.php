@@ -5,13 +5,13 @@
         </div>
         <h1 class="font-bold text-3xl font-headings">Unterstütze mich mit einem Gutschein</h1>
 
-        <div class="font-bold my-8 ">
+        <div class="font-bold mt-8 mb-3 ">
             Du bist auf der seite von: {{$company_name}}
         </div>
 
         @if($checkout_token)
             <div class="w-full md:w-3/4 mx-auto">
-            <span class="">Auch wir werden leider aufgrund der aktuellen Gegebenheiten von unserem Alltag abgehalten.<br><br>
+            <span class="">Auch wir werden leider aufgrund der aktuellen Gegebenheiten von unserem Alltag abgehalten.<br>
             Da wir euch auch nach der Krise weiterhin unsere Leistungen anbieten möchten, freuen wir uns über jeden verkauften Gutschein</span>
             </div>
 
