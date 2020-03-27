@@ -161,7 +161,7 @@
                     <div class="md:col-span-1">
                         <h3 class="text-lg font-medium leading-6 text-gray-900">Dein interner Checkout</h3>
                         <p class="mt-1 text-sm leading-5 text-gray-500">
-                            Hier kannst Du aktivieren ob dein Checkout unter <a class="text-brand underline"
+                            Hier kannst du aktivieren ob dein Checkout unter <a class="text-brand underline"
                                                                                 target="_blank"
                                                                                 href="{{url(auth()->user()->checkout_url)}}">Deinem
                                 Checkout</a> aktiviert sein soll. Außerdem siehst du den public Token, der verwendet

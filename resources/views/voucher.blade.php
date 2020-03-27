@@ -21,7 +21,7 @@
 
     @livewireStyles
     <script src="https://js.buxale.io/js/app.js"></script>
-    <link href="https://js.buxale.io/css/app.css" rel="stylesheet" />
+    <link href="https://js.buxale.io/css/app.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -30,7 +30,7 @@
 
 
     <div class="py-10 container mx-auto flex justify-center">
-        <div class="rounded w-full lg:w-2/3 xl:w-1/2 bg-white shadow-xl border border-gray-200  p-4 px-24 text-center">
+        <div class="rounded w-full lg:w-2/3 xl:w-1/2 bg-white shadow border border-gray-200  p-4 px-24 text-center">
             <div class="flex justify-center my-6">
                 <img class="h-12 w-auto" src="/img/buxale-logo.png" alt=""/>
             </div>
