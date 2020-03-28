@@ -21,6 +21,9 @@
 
     <script src="https://js.stripe.com/v3/"></script>
 
+    {{-- favicon --}}
+    <link rel="icon" href="{{ URL::asset('img/buxale-favicon.png') }}" type="image/x-icon"/>
+
     @livewireStyles
     <script src="https://js.buxale.io/js/app.js"></script>
     <link href="https://js.buxale.io/css/app.css" rel="stylesheet"/>
