@@ -49,7 +49,7 @@ class MyCheckout extends Component
     public function activateCheckout()
     {
         $user = auth()->user();
-        $token = $user->createToken('buxale-api-key', ['access' => 'stripe']);
+        $token = $user->createToken('internal-checkout-token', ['access' => 'stripe']);
         $user->update(['checkout_token' => $token->plainTextToken]);
         $this->checkout_token = $token->plainTextToken;
     }
