@@ -69,7 +69,7 @@
                     {{__('Ihr neuer API Key')}}
                 </h3>
                 <div class="mt-5">
-                    <div class="rounded-md bg-gray-50 px-6 py-5 sm:flex sm:items-start sm:justify-between">
+                    <div class="rounded-md bg-gray-50 px-6 py-5 sm:flex sm:items-start sm:justify-between break-all">
                         {{$plainTextToken}}
                     </div>
                 </div>
@@ -79,9 +79,9 @@
 
 
     {{-- buttons / delete existing keys, create new key --}}
-    <div class="mt-4">
+    <div class="w-full px-4 sm:px-0 mt-4">
         @if(! empty($apiKeys))
-            <span class="inline-flex rounded-md shadow-sm">
+            <span class="inline-flex rounded-md shadow-sm py-2 sm:py-0">
                 <button
                     type="button"
                     class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-orange-600 hover:bg-orange-500 focus:outline-none focus:border-orange-700 focus:shadow-outline-orange active:bg-orange-700 transition ease-in-out duration-150"
@@ -92,7 +92,7 @@
             </span>
         @endif
 
-        <span class="inline-flex rounded-md shadow-sm">
+        <span class="inline-flex rounded-md shadow-sm py-2 sm:py-0">
             <button
                 type="button"
                 class="inline-flex items-center px-3 py-2 border border-gray-300 text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"
@@ -102,7 +102,7 @@
             </button>
         </span>
 
-        <span class="inline-flex rounded-md shadow-sm">
+        <span class="inline-flex rounded-md shadow-sm py-2 sm:py-0">
             <button
                 type="button"
                 class="inline-flex items-center px-3 py-2 border border-gray-300 text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150"

@@ -1,7 +1,7 @@
 <form wire:submit.prevent="submit">
-    <div>
-        <div>
-            <div>
+    <div class="w-full px-4 sm:px-0">
+        <div class="w-full">
+            <div class="w-full">
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
                     Gutscheindaten
                 </h3>
@@ -148,8 +148,8 @@
             </div>
         </div>
     </div>
-    <div class="mt-8 border-t border-gray-200 pt-5">
-        <div class="flex justify-end">
+    <div class="w-full mt-8 border-t border-gray-200 pt-5">
+        <div class="flex justify-center sm:justify-end px-6 sm:px-0">
 
             {{-- cancel button--}}
             <span class="ml-3 inline-flex rounded-md shadow-sm">

@@ -1,6 +1,6 @@
 <div class="relative bg-brand no-print">
     <div class="max-w-screen-xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
-        <div class="pr-16 sm:text-center sm:px-16">
+        <div class=" px-2 sm:pr-16 sm:text-center sm:px-16">
             <p class="font-medium text-white">
         <span class="md:hidden">
           Wir sind in der <span class="font-black">ALPHA</span>, mit Testdaten.
