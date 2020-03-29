@@ -2,25 +2,14 @@
 
 namespace App\Notifications;
 
+use Illuminate\Auth\Notifications\ResetPassword as ResetPasswordNotification;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\URL;
 
-class NewVoucherNotification extends Notification
+class ResetPassword extends ResetPasswordNotification
 {
     use Queueable;
-    public $voucher;
 
-    /**
-     * Create a new notification instance.
-     *
-     * @return void
-     */
-    public function __construct($voucher)
-    {
-        $this->voucher = $voucher;
-    }
 
     /**
      * Get the notification's delivery channels.
@@ -41,14 +30,19 @@ class NewVoucherNotification extends Notification
      */
     public function toMail($notifiable)
     {
+        $url = url(config('app.url') . route('password.reset', [
+                'token' => $this->token,
+                'email' => $notifiable->getEmailForPasswordReset(),
+            ], false));
+
         return (new MailMessage)
-            ->subject('🎁 Dein Gutschein ist hier!')
+            ->subject('🔑 Passwort reset')
             ->greeting('Guten Tag,')
             ->salutation('Mit besten Grüßen')
-            ->line('Deine Gutscheinbestellung im Wert von ' . $this->voucher->value . ' EUR wurde bearbeitet.')
-            ->action('Gutschein anzeigen', URL::signedRoute('public.voucher', ['voucher' => $this->voucher->id]))
-            ->line('Dein Gutscheincode lautet ' . $this->voucher->code)
-            ->line('Bitte speichere ihn gut ab!');
+            ->line('Du hast dein Passwort vergessen? Kein Problem. Klicke hier:')
+            ->action('Passwort zurücksetzen', $url)
+            ->line('Solltest du diesen Reset nicht veranlasst haben, ignoriere diese Mail.');
+
     }
 
     /**
