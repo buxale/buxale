@@ -63,7 +63,7 @@ class VouchersCreatePage extends Component
         ]);
 
         (new VoucherRepository())->createFromUser(auth()->user(), $data, $this->notify_customer, $this->already_paid, $this->open_for_payment);
-
+        session()->flash('message', ['title' => 'Gutschein erstellt', 'body' => 'Der Gutschein wurde erstellt und ggf. versendet.']);
         return $this->redirect('/vouchers');
     }
 

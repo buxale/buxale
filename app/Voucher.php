@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\URL;
 
 class Voucher extends Model
 {
@@ -81,5 +82,10 @@ class Voucher extends Model
     public function user()
     {
         return $this->belongsTo(User::Class);
+    }
+
+    public function getExternalUrlAttribute()
+    {
+        return URL::signedRoute('public.voucher', ['voucher' => $this->id]);
     }
 }

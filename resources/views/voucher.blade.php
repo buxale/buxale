@@ -48,7 +48,7 @@
 
             <span>Dein Code: {{$voucher->code}}</span>
             <div class="flex justify-center">
-                {!! QrCode::size(300)->generate($voucher->code); !!}
+                {!! QrCode::size(300)->generate($voucher->external_url); !!}
             </div>
 
             <p class="text-gray-500 mt-6">Dein Gutschein von {{$voucher->user->company}} sollte erst nach unserem

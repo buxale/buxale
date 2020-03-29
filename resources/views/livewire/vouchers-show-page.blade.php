@@ -8,6 +8,7 @@
                 {{__('Wert')}}: {{$voucher->value}} EUR
             </p>
         </div>
+
         <div class="px-4 py-5 sm:p-0">
             <dl>
                 <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 sm:py-5">
@@ -23,7 +24,7 @@
                         {{__('Käufer Email')}}
                     </dt>
                     <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-                        {{$voucher->customer_email}}
+                        <a href="mailto:{{$voucher->customer_email}}" class="underline">{{$voucher->customer_email}}</a>
                     </dd>
                 </div>
                 <div class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
@@ -31,7 +32,7 @@
                         {{__('Kaufdatum')}}
                     </dt>
                     <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-                        {{$voucher->created_at}}
+                        {{$voucher->created_at->format('d.m.Y')}} um {{$voucher->created_at->format('H:i')}}
                     </dd>
                 </div>
                 <div class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
@@ -48,6 +49,16 @@
                                 {{__('Eingelöst am')}}: {{$voucher->used_at}}
                             </span>
                         @endif
+                    </dd>
+                </div>
+                <div class="mt-8 sm:mt-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:border-t sm:border-gray-200 sm:px-6 sm:py-5">
+                    <dt class="text-sm leading-5 font-medium text-gray-500">
+                        Dein QR Code
+                    </dt>
+                    <dd class="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
+                        {!! QrCode::size(150)->generate($voucher->external_url); !!}
+                        <a href="/qr-code?code={{$voucher->external_url}}" target="_blank"
+                           class="text-brand underline font-bold text-xl ml-3">Download</a>
                     </dd>
                 </div>
             </dl>

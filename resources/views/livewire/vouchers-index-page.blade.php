@@ -21,6 +21,7 @@
             <span class="block font-hairline font-xl mt-6 text-3xl text-gray-300">{{__('Noch keine Gutscheine vorhanden')}}</span>
         </div>
     @endif
+
     <ul>
         @foreach($vouchers as $voucher)
             <li @if(!$loop->first)  class="border-t border-gray-200" @endif >
@@ -73,7 +74,7 @@
             </li>
         @endforeach
     </ul>
-    <div class="my-6">
-        {{ $vouchers->links() }}
-    </div>
+        <div class="my-6">
+            {{ $vouchers->links() }}
+        </div>
 </div>

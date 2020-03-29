@@ -19370,11 +19370,12 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/rami/projects/buxale/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/rami/projects/buxale/resources/sass/auth.scss */"./resources/sass/auth.scss");
-module.exports = __webpack_require__(/*! /Users/rami/projects/buxale/resources/sass/app.scss */"./resources/sass/app.scss");
+            __webpack_require__(/*! /Users/vittorioemmermann/projects/buxale/resources/js/app.js */"./resources/js/app.js");
+            __webpack_require__(/*! /Users/vittorioemmermann/projects/buxale/resources/sass/auth.scss */"./resources/sass/auth.scss");
+            module.exports = __webpack_require__(/*! /Users/vittorioemmermann/projects/buxale/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
-/***/ })
+            /***/
+        })
 
 /******/ });
