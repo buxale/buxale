@@ -28,7 +28,7 @@
 
 </head>
 <body>
-<div>
+<div class="w-full overflow-hidden">
     <x-announce/>
 
 

@@ -1,4 +1,4 @@
-<div class="flex flex-wrap justify-between">
+<div class="w-full flex flex-wrap justify-between px-4 xs:px-6 sm:px-0">
     <div class="w-full sm:w-1/3">
         <label for="email" class="sr-only">Email</label>
         <div class="relative rounded-md shadow-sm">
@@ -7,7 +7,7 @@
     </div>
 
     <div>
-        <span class="inline-flex rounded-md shadow-sm">
+        <span class="inline-flex rounded-md shadow-sm py-4 sm:py-0">
           <a href="/vouchers/create" class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-brand hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green active:bg-green-700 transition ease-in-out duration-150">
             Neuer Gutschein
           </a>
@@ -15,7 +15,7 @@
     </div>
 </div>
 
-<div class="bg-white shadow overflow-hidden sm:rounded-md mt-6">
+<div class="w-full bg-white shadow overflow-hidden sm:rounded-md mt-6 px-4 xs:px-6 sm:px-0">
     @if(!$vouchers->count())
         <div class="text-center">
             <span class="block font-hairline font-xl mt-6 text-3xl text-gray-300">{{__('Noch keine Gutscheine vorhanden')}}</span>
@@ -26,12 +26,12 @@
             <li @if(!$loop->first)  class="border-t border-gray-200" @endif >
                 <a href="/vouchers/{{$voucher->id}}"
                    class="block hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition duration-150 ease-in-out">
-                    <div class="px-4 py-4 sm:px-6">
-                        <div class="flex items-center justify-between">
+                    <div class="sm:px-4 py-4 sm:px-6">
+                        <div class="w-full flex flex-col xs:flex-row xs:items-center xs:justify-between">
                             <div class="text-sm leading-5 font-medium text-green-600 truncate">
                                 {{$voucher->code}} - @money($voucher->value * 100, 'EUR')
                             </div>
-                            <div class="ml-2 flex-shrink-0 flex">
+                            <div class="sm:ml-2 pt-2 sm:pt-0 flex-shrink-0 flex">
                                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                                     Nicht eingelöst
                                 </span>

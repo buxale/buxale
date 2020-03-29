@@ -30,7 +30,7 @@
 
 </head>
 <body class="font-sans">
-<div>
+<div class="w-full overflow-hidden">
     <x-announce/>
     @yield('content')
     <x-footer/>

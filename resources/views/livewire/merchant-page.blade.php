@@ -16,7 +16,7 @@
             </div>
 
 
-            <div class="flex justify-center mt-6">
+            <div class="w-full px-4 flex justify-center mt-6">
                 <buxale-button
                         api_token="{{ $checkout_token }}"
                         success_url="{{url()->full()}}" cancel_url="{{url()->full()}}"

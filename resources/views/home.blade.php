@@ -54,7 +54,7 @@
                     {{ __('Kopiere diesen Code in deinen <head> Bereich deiner Webseite') }}
                     {{ __('Benutzt du ein CMS, nimm gern Kontakt zu uns auf und wir helfen dir weiter.') }}
                 </p>
-                <pre class="bg-gray-800 rounded text-white mt-4">
+                <pre class="bg-gray-800 rounded text-white mt-4 overflow-x-scroll w-full pr-2">
                         {{ '
     <head>
       ....
@@ -66,7 +66,7 @@
                     {{ __('Irgendwo deiner Webseite, wo der Checkout verfügbar sein soll. Betrag sind in diesem Beispiel 10 Euro. Bitte tausche deinen API Token im Code gegen "DEIN_API_TOKEN_HIER" ein.') }}
                     {{ __('Verfügbare Farben sind: gray, red, orange, yellow, green, teal, blue, indigo, purple und pink.') }}
                 </p>
-                <pre class="bg-gray-800 rounded text-white mt-4">
+                <pre class="bg-gray-800 rounded text-white mt-4 overflow-x-scroll w-full pr-2">
                         {{ "
     <buxale-button
       api_token=\"DEIN_API_TOKEN_HIER\"
