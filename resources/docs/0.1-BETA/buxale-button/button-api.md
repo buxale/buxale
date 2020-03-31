@@ -1,14 +1,12 @@
-# Overview
+# Button API
 
 ---
 
-- [Overview](#overview)
+- [Button API](#overview)
 
-<a name="overview"></a>
-## Überblick über die Parameter
-> {info} Wir haben diese Plattform in Rahmen eines Hackathons bin in 48h aus dem Boden gestampft. Bitte habt Nachsicht was den Umfang der Dokumentation angeht.
+<a name="overview"></a>   
 
-Folgende Parameter sind verfügbar. Erklärung dazu folgt weiter unten.
+Folgende Parameter sind verfügbar:
 ```json5
 {
     buttonText: {

@@ -1,15 +1,14 @@
-# Overview
+# Voucher speichern
 
 ---
 
-- [Overview](#overview)
+- [Voucher speichern](#overview)
 
 <a name="overview"></a>
 ## Einen Voucher speichern
-> {info} Wir haben diese Plattform in Rahmen eines Hackathons bin in 48h aus dem Boden gestampft. Bitte habt Nachsicht was den Umfang der Dokumentation angeht.
 
 ### Authorization
-Bearer Token, siehe Headers
+Bearer Token, siehe [Headers](/{{route}}/{{version}}/buxale-button/integration)
 
 ### Endpoint
 
