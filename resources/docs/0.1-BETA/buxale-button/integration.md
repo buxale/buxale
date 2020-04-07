@@ -1,4 +1,4 @@
-# Integration des Buttons
+# Implementierung des Buttons
 
 ---
 
@@ -7,10 +7,10 @@
 - [Implementierung des Buttons](#implementierung)
 
 <a name="snippets"></a>
-## Einbau der Snippets
+## Snippets einbauen
 > {info} Solltest du ein CMS benutzen kannst du gerne bei Problemen den Support kontaktieren.
 
-Kopiere diesen Code in deinen `<head>` Bereich deiner Webseite
+Kopiere diesen Code in den `<head>` Bereich deiner Website:
 
 ```html
   <script src="https://js.buxale.io/js/app.js"></script>
@@ -29,22 +29,22 @@ Das sieht dann etwa so aus:
 ```
 
 <a name="apitoken"></a>
-## Erstelle einen API Token
+## API Token erstellen
 
-> {info} Der API Token ist ein einzigartiger Schlüssel, der deinen Checkout als eben den deinen identifiziert.
+> {info} Der API Token ist ein einzigartiger Schlüssel, der deinen Checkout identifiziert und absichert.
 
 Klicke in unserer Platform im Menü auf API:
 ![API Menu](/img/docs/menu_point_api.png)
 
-Und danach Klicke einfach auf den Button "Neuen API Key generieren"
+Und danach einfach auf den Button "Neuen API Key generieren":
 ![API Key Generate](/img/docs/api_generate_key.png)
 
-Der Code wird dir dann angezeigt. <b>Speichere ihn gut, er erscheint nur einmalig</b>
+Der Code wird dir dann angezeigt. <b>Speichere ihn gut, er erscheint nur einmalig.</b>
 
 <a name="implementierung"></a>
-## Implementierung des Buttons
+## Button implementieren
 
-Der Button selber kann an jeder Stelle im `<body>` deiner Webseite stehen. Dazu kopiere einfach folgenden Code in deiner Seite.
+Der Button selber kann an jeder Stelle im `<body>` deiner Webseite stehen. Kopiere dazu einfach folgenden Code in deiner Seite:
 
 
 ```html
@@ -56,6 +56,6 @@ Der Button selber kann an jeder Stelle im `<body>` deiner Webseite stehen. Dazu 
       amount="15" />
 ```
 
-Den API Token, den du im letzten Schritt erzeugt hast, muss gegen `DEIN_API_TOKEN_HIER` getauscht werden.
+`DEIN_API_TOKEN_HIER` muss gegen den API Token, den du im voherigen Schritt erzeug hast getauscht werden.  
 
-Die anderen Parameter zur Anpassung deines Buttons erklären wir <a href="">hier</a>. 
+Die anderen Parameter zur Anpassung des Buttons erklären wir [hier](/{{route}}/{{version}}/buxale-button/button-api). 
